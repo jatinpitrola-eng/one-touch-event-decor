@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "balloon column pillar decoration event party",
+  "count": 6,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4acdddc808c3.jpg",
+      "caption": "",
+      "source": "Amazon.com",
+      "original_width": "894px",
+      "original_height": "907px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a9296597a2c0.jpg",
+      "caption": "",
+      "source": "Amazon.com",
+      "original_width": "894px",
+      "original_height": "892px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0e1ca7f8fd8f.jpg",
+      "caption": "",
+      "source": "Amazon.com",
+      "original_width": "894px",
+      "original_height": "902px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ff85e64c57fd.png",
+      "caption": "",
+      "source": "Party Balloons By Q",
+      "original_width": "1268px",
+      "original_height": "1266px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2b66109c49cd.jpg",
+      "caption": "",
+      "source": "www.equerre-finitions.fr",
+      "original_width": "1500px",
+      "original_height": "1500px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/96bb829b7221.jpg",
+      "caption": "",
+      "source": "Alibaba.com",
+      "original_width": "1110px",
+      "original_height": "1110px"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "luxury anniversary celebration balloon decoration romantic",
+  "count": 6,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fcb871946fc3.jpg",
+      "caption": "",
+      "source": "Amazon.com",
+      "original_width": "894px",
+      "original_height": "894px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/55fbc913b81c.jpeg",
+      "caption": "",
+      "source": "Airbnb",
+      "original_width": "960px",
+      "original_height": "1440px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5ff84a42f5d2.jpg",
+      "caption": "",
+      "source": "Party Wholesale Hub",
+      "original_width": "1000px",
+      "original_height": "1000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/467bb354ac9d.jpg",
+      "caption": "",
+      "source": "Paris312",
+      "original_width": "896px",
+      "original_height": "1120px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/423cb071a1e8.jpg",
+      "caption": "",
+      "source": "The Sky Balloons",
+      "original_width": "1058px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/67c5328ba184.jpg",
+      "caption": "",
+      "source": "Paris312",
+      "original_width": "896px",
+      "original_height": "1120px"
+    }
+  ]
+}

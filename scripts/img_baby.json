@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "query": "baby shower balloon garland decoration pastel",
+  "count": 5,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/cf845b0572ab.jpg",
+      "caption": "",
+      "source": "Amazon.com",
+      "original_width": "894px",
+      "original_height": "881px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2495487eacd5.jpg",
+      "caption": "",
+      "source": "WOW Party Art",
+      "original_width": "1946px",
+      "original_height": "2595px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6eb6fbb3620c.png",
+      "caption": "",
+      "source": "Bonjour Fête",
+      "original_width": "1200px",
+      "original_height": "1800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5288f94f87a5.jpg",
+      "caption": "",
+      "source": "WOW Party Art",
+      "original_width": "1445px",
+      "original_height": "1927px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/cbb5be39c6ed.jpg",
+      "caption": "",
+      "source": "www.aoninsaat.com",
+      "original_width": "1200px",
+      "original_height": "1200px"
+    }
+  ]
+}
