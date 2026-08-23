@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Heart, Cake, Baby, Building, Gift, Sparkles, ArrowUpRight } from "lucide-react";
 import { IMAGES } from "@/lib/images";
+import Tilt3D from "./Tilt3D";
 
 const SERVICES = [
   {
@@ -99,23 +100,26 @@ export default function Services() {
         {/* Bento grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 auto-rows-[280px] md:auto-rows-[320px]">
           {SERVICES.map((s, i) => (
-            <motion.article
+            <motion.div
               key={s.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.08 }}
               className={`group relative rounded-[1.5rem] overflow-hidden shadow-lg hover-lift ${s.span}`}
+              style={{ perspective: 1000 }}
             >
-              <Image
-                src={s.image}
-                alt={s.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#4A1A28]/95 via-[#4A1A28]/40 to-transparent" />
+              <Tilt3D maxTilt={6} className="h-full">
+                <article className="relative h-full w-full">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#4A1A28]/95 via-[#4A1A28]/40 to-transparent" />
               {/* Icon */}
               <div className="absolute top-5 left-5 w-12 h-12 rounded-full bg-[#FAF3E8]/15 backdrop-blur-md border border-[#FAF3E8]/30 flex items-center justify-center">
                 <s.icon className="w-5 h-5 text-[#FAF3E8]" />
@@ -134,7 +138,9 @@ export default function Services() {
                   {s.desc}
                 </p>
               </div>
-            </motion.article>
+                </article>
+              </Tilt3D>
+            </motion.div>
           ))}
         </div>
 

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowDown, Star } from "lucide-react";
 import { IMAGES } from "@/lib/images";
 import MagneticButton from "./MagneticButton";
+import FloatingPetals from "./FloatingPetals";
 
 // Animated SVG balloon — reacts to mouse position
 function FloatingBalloon({
@@ -123,6 +124,9 @@ export default function Hero() {
       ref={ref}
       className="relative min-h-screen flex items-center pt-28 pb-20 gradient-mesh overflow-hidden grain-overlay"
     >
+      {/* Floating petals — ambient atmosphere */}
+      <FloatingPetals count={14} />
+
       {/* Decorative rotating ring */}
       <div className="absolute -top-32 -right-32 w-[40rem] h-[40rem] opacity-[0.08] animate-slow-spin pointer-events-none">
         <svg viewBox="0 0 200 200" className="w-full h-full">
