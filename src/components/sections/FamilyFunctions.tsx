@@ -32,9 +32,9 @@ export default function FamilyFunctions() {
   return (
     <section
       id="family"
-      className="relative py-24 md:py-32 bg-luxe-emerald text-[#FBF5EC] overflow-hidden grain-overlay"
+      className="relative py-24 md:py-32 bg-luxe-wine text-[#FAF3E8] overflow-hidden grain-overlay"
     >
-      <span className="section-num absolute -top-8 right-4 !text-[#FBF5EC]/10 !text-stroke-1 !text-[#FBF5EC]/10">
+      <span className="section-num absolute -top-8 right-4 !text-[#FAF3E8]/10">
         03
       </span>
 
@@ -43,10 +43,10 @@ export default function FamilyFunctions() {
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
           <path
             d="M40 5 C 20 20, 20 60, 40 75 C 60 60, 60 20, 40 5 Z"
-            stroke="#E8B4B8"
+            stroke="#D4A5A5"
             strokeWidth="1"
           />
-          <path d="M40 5 L 40 75" stroke="#E8B4B8" strokeWidth="0.5" />
+          <path d="M40 5 L 40 75" stroke="#D4A5A5" strokeWidth="0.5" />
         </svg>
       </div>
 
@@ -61,8 +61,8 @@ export default function FamilyFunctions() {
               transition={{ duration: 0.7 }}
               className="inline-flex items-center gap-3 mb-5"
             >
-              <span className="block w-10 h-px bg-[#E8B4B8]" />
-              <span className="text-xs tracking-luxe text-[#E8B4B8] font-medium">
+              <span className="block w-10 h-px bg-[#D4A5A5]" />
+              <span className="text-xs tracking-luxe text-[#D4A5A5] font-medium">
                 BECAUSE FAMILY IS FOREVER
               </span>
             </motion.div>
@@ -76,7 +76,7 @@ export default function FamilyFunctions() {
             >
               Family Functions,
               <br />
-              <span className="font-script italic text-[#E8B4B8]">Elevated</span>
+              <span className="font-script italic text-[#D4A5A5]">Elevated</span>
             </motion.h2>
 
             <motion.p
@@ -84,7 +84,7 @@ export default function FamilyFunctions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="mt-6 text-base md:text-lg text-[#FBF5EC]/85 leading-relaxed max-w-xl"
+              className="mt-6 text-base md:text-lg text-[#FAF3E8]/85 leading-relaxed max-w-xl"
             >
               Some of our most-loved celebrations are the ones held at home —
               surrounded by grandparents, cousins, and the smell of mum&apos;s
@@ -110,11 +110,11 @@ export default function FamilyFunctions() {
                   transition={{ duration: 0.7, delay: 0.1 * i }}
                   className="group"
                 >
-                  <div className="w-11 h-11 rounded-full bg-[#E8B4B8]/15 border border-[#E8B4B8]/40 flex items-center justify-center mb-3 group-hover:bg-[#C97B5C] group-hover:border-[#C97B5C] transition-all">
-                    <m.icon className="w-5 h-5 text-[#E8B4B8] group-hover:text-[#FBF5EC] transition-colors" />
+                  <div className="w-11 h-11 rounded-full bg-[#D4A5A5]/15 border border-[#D4A5A5]/40 flex items-center justify-center mb-3 group-hover:bg-[#E07856] group-hover:border-[#E07856] transition-all">
+                    <m.icon className="w-5 h-5 text-[#D4A5A5] group-hover:text-[#FAF3E8] transition-colors" />
                   </div>
                   <h4 className="font-display text-lg font-semibold">{m.title}</h4>
-                  <p className="mt-2 text-sm text-[#FBF5EC]/75 leading-relaxed">
+                  <p className="mt-2 text-sm text-[#FAF3E8]/75 leading-relaxed">
                     {m.desc}
                   </p>
                 </motion.div>
@@ -130,7 +130,7 @@ export default function FamilyFunctions() {
             >
               <a
                 href="#booking"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#C97B5C] text-[#FBF5EC] tracking-wide rounded-full hover:bg-[#FBF5EC] hover:text-[#1F3D34] transition-all duration-500 shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#E07856] text-[#FAF3E8] tracking-wide rounded-full hover:bg-[#FAF3E8] hover:text-[#4A1A28] transition-all duration-500 shadow-lg"
               >
                 Plan a Family Celebration
                 <span>→</span>
@@ -152,7 +152,7 @@ export default function FamilyFunctions() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.1 }}
-              className="absolute top-0 right-0 w-[75%] h-[68%] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-[#1F3D34] zoom-img"
+              className="absolute top-0 right-0 w-[75%] h-[68%] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-[#4A1A28] zoom-img"
             >
               <Image
                 src={IMAGES.family[2]}
@@ -168,7 +168,7 @@ export default function FamilyFunctions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.25 }}
-              className="absolute bottom-0 left-0 w-[55%] h-[48%] rounded-[1.5rem] overflow-hidden shadow-2xl border-4 border-[#1F3D34] zoom-img"
+              className="absolute bottom-0 left-0 w-[55%] h-[48%] rounded-[1.5rem] overflow-hidden shadow-2xl border-4 border-[#4A1A28] zoom-img"
             >
               <Image
                 src={IMAGES.family[3]}
@@ -188,13 +188,13 @@ export default function FamilyFunctions() {
             >
               <div className="flex gap-0.5 mb-2">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-[#E8B4B8] text-sm">★</span>
+                  <span key={i} className="text-[#D4A5A5] text-sm">★</span>
                 ))}
               </div>
-              <p className="text-xs text-[#FBF5EC]/90 leading-relaxed">
+              <p className="text-xs text-[#FAF3E8]/90 leading-relaxed">
                 &ldquo;They turned our tiny terrace into a wedding wonderland. Every aunty asked for their number!&ldquo;
               </p>
-              <p className="mt-2 text-[10px] tracking-luxe text-[#E8D5B7]">— SHARMA FAMILY</p>
+              <p className="mt-2 text-[10px] tracking-luxe text-[#E8DDC8]">— SHARMA FAMILY</p>
             </motion.div>
           </motion.div>
         </div>

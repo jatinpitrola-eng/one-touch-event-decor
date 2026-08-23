@@ -58,8 +58,8 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden sm:block leading-tight">
-              <p className="font-script text-lg text-[#1F3D34]">One Touch</p>
-              <p className="font-display text-[10px] tracking-luxe text-[#C97B5C]">
+              <p className="font-script text-lg text-[#4A1A28]">One Touch</p>
+              <p className="font-display text-[10px] tracking-luxe text-[#E07856]">
                 EVENT DÉCOR
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-sans text-sm tracking-wide text-[#1F3D34] underline-draw hover:text-[#C97B5C] transition-colors"
+                  className="font-sans text-sm tracking-wide text-[#4A1A28] underline-draw hover:text-[#E07856] transition-colors"
                 >
                   {l.label}
                 </a>
@@ -83,14 +83,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+919999999999"
-              className="flex items-center gap-2 text-[#1F3D34] text-sm hover:text-[#C97B5C] transition-colors"
+              className="flex items-center gap-2 text-[#4A1A28] text-sm hover:text-[#E07856] transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span>+91 99999 99999</span>
             </a>
             <a
               href="#booking"
-              className="px-5 py-2.5 bg-[#1F3D34] text-[#FBF5EC] text-sm tracking-wide rounded-full hover:bg-[#C97B5C] transition-colors duration-300"
+              className="px-5 py-2.5 bg-[#4A1A28] text-[#FAF3E8] text-sm tracking-wide rounded-full hover:bg-[#E07856] transition-colors duration-300"
             >
               Book Now
             </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             aria-label="Open menu"
-            className="lg:hidden p-2 text-[#1F3D34]"
+            className="lg:hidden p-2 text-[#4A1A28]"
             onClick={() => setOpen(true)}
           >
             <Menu className="w-6 h-6" />
@@ -117,7 +117,7 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] lg:hidden"
           >
             <div
-              className="absolute inset-0 bg-[#1F3D34]/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#4A1A28]/80 backdrop-blur-sm"
               onClick={() => setOpen(false)}
             />
             <motion.aside
@@ -127,14 +127,14 @@ export default function Navbar() {
               transition={{ type: "spring", damping: 26, stiffness: 240 }}
               className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-luxe-cream shadow-2xl flex flex-col"
             >
-              <div className="flex items-center justify-between p-6 border-b border-[#E5D9C4]">
+              <div className="flex items-center justify-between p-6 border-b border-[#E8DDC8]">
                 <div className="flex items-center gap-3">
                   <div className="relative w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">
                     <Image src="/logo.png" alt="Logo" fill className="object-contain p-1" />
                   </div>
                   <div className="leading-tight">
-                    <p className="font-script text-base text-[#1F3D34]">One Touch</p>
-                    <p className="font-display text-[9px] tracking-luxe text-[#C97B5C]">
+                    <p className="font-script text-base text-[#4A1A28]">One Touch</p>
+                    <p className="font-display text-[9px] tracking-luxe text-[#E07856]">
                       EVENT DÉCOR
                     </p>
                   </div>
@@ -142,7 +142,7 @@ export default function Navbar() {
                 <button
                   aria-label="Close menu"
                   onClick={() => setOpen(false)}
-                  className="p-2 text-[#1F3D34]"
+                  className="p-2 text-[#4A1A28]"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -158,7 +158,7 @@ export default function Navbar() {
                     <a
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="block py-3 font-display text-2xl text-[#1F3D34] border-b border-[#E5D9C4]/60 hover:text-[#C97B5C] transition-colors"
+                      className="block py-3 font-display text-2xl text-[#4A1A28] border-b border-[#E8DDC8]/60 hover:text-[#E07856] transition-colors"
                     >
                       {l.label}
                     </a>
@@ -169,13 +169,13 @@ export default function Navbar() {
                 <a
                   href="#booking"
                   onClick={() => setOpen(false)}
-                  className="block w-full text-center px-5 py-3 bg-[#1F3D34] text-[#FBF5EC] tracking-wide rounded-full hover:bg-[#C97B5C] transition-colors"
+                  className="block w-full text-center px-5 py-3 bg-[#4A1A28] text-[#FAF3E8] tracking-wide rounded-full hover:bg-[#E07856] transition-colors"
                 >
                   Book a Consultation
                 </a>
                 <a
                   href="tel:+919999999999"
-                  className="mt-3 flex items-center justify-center gap-2 text-[#1F3D34] text-sm"
+                  className="mt-3 flex items-center justify-center gap-2 text-[#4A1A28] text-sm"
                 >
                   <Phone className="w-4 h-4" /> +91 99999 99999
                 </a>

@@ -5,24 +5,26 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 /**
- * Luxe Balloon Loader — animated intro
- * Balloons rise from bottom, logo scales in, then exits with curtain reveal.
+ * Luxe Balloon Loader — short, elegant intro (2.2s)
+ * - 5 smaller balloons rise elegantly
+ * - Logo in the center with rotating botanical ring
+ * - Smooth fade out
  */
 export default function Loader() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setDone(true), 3200);
+    const t = setTimeout(() => setDone(true), 2200);
     return () => clearTimeout(t);
   }, []);
 
-  // 5 floating balloons, slightly staggered
+  // Smaller, more elegant balloon cluster
   const balloons = [
-    { left: "8%", delay: 0, color: "#E8B4B8", size: 70, string: 220 },
-    { left: "24%", delay: 0.3, color: "#C97B5C", size: 90, string: 280 },
-    { left: "44%", delay: 0.15, color: "#94A88B", size: 80, string: 250 },
-    { left: "66%", delay: 0.45, color: "#E8D5B7", size: 100, string: 300 },
-    { left: "86%", delay: 0.25, color: "#E8B4B8", size: 75, string: 240 },
+    { left: "10%", delay: 0, color: "#D4A5A5", size: 55, string: 180 },
+    { left: "26%", delay: 0.25, color: "#E07856", size: 70, string: 220 },
+    { left: "50%", delay: 0.15, color: "#9CAF88", size: 60, string: 200 },
+    { left: "72%", delay: 0.35, color: "#F0A88E", size: 75, string: 240 },
+    { left: "90%", delay: 0.2, color: "#D4A5A5", size: 58, string: 190 },
   ];
 
   return (
@@ -30,20 +32,23 @@ export default function Loader() {
       {!done && (
         <motion.div
           key="loader"
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-luxe-emerald overflow-hidden"
-          exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-luxe-wine overflow-hidden"
+          exit={{ opacity: 0, transition: { duration: 0.7, ease: "easeInOut" } }}
         >
-          {/* Subtle ornamental rings */}
+          {/* Animated gradient mesh background */}
+          <div className="absolute inset-0 gradient-mesh-dark opacity-90" />
+
+          {/* Rotating ornamental rings */}
           <div
-            className="absolute w-[120vw] h-[120vw] rounded-full border border-white/5 animate-slow-spin"
-            style={{ top: "-60vw", left: "-10vw" }}
+            className="absolute w-[140vw] h-[140vw] rounded-full border border-[#E07856]/8 animate-slow-spin"
+            style={{ top: "-70vw", left: "-20vw" }}
           />
           <div
-            className="absolute w-[80vw] h-[80vw] rounded-full border border-white/5 animate-slow-spin-reverse"
-            style={{ bottom: "-40vw", right: "-20vw" }}
+            className="absolute w-[100vw] h-[100vw] rounded-full border border-[#D4A5A5]/8 animate-slow-spin-reverse"
+            style={{ bottom: "-50vw", right: "-25vw" }}
           />
 
-          {/* Rising balloons */}
+          {/* Rising balloons — smaller, more refined */}
           {balloons.map((b, i) => (
             <motion.div
               key={i}
@@ -52,49 +57,43 @@ export default function Loader() {
               initial={{ y: "110vh", opacity: 0 }}
               animate={{
                 y: ["110vh", "-30vh"],
-                opacity: [0, 1, 1, 0],
+                opacity: [0, 0.85, 0.85, 0],
               }}
               transition={{
-                duration: 3.2,
+                duration: 2.4,
                 delay: b.delay,
                 ease: "easeInOut",
                 times: [0, 0.2, 0.85, 1],
               }}
             >
-              <div
-                className="relative"
-                style={{ width: b.size, height: b.size * 1.2 }}
-              >
-                {/* Balloon body */}
+              <div className="relative" style={{ width: b.size, height: b.size * 1.2 }}>
                 <div
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: `radial-gradient(circle at 30% 25%, rgba(255,255,255,0.7) 0%, ${b.color} 45%, rgba(0,0,0,0.15) 100%)`,
-                    boxShadow: `inset -8px -10px 18px rgba(0,0,0,0.18), 0 12px 30px rgba(0,0,0,0.25)`,
+                    background: `radial-gradient(circle at 30% 25%, rgba(255,255,255,0.8) 0%, ${b.color} 50%, rgba(0,0,0,0.18) 100%)`,
+                    boxShadow: `inset -8px -10px 18px rgba(0,0,0,0.2), 0 12px 30px rgba(0,0,0,0.25)`,
                   }}
                 />
-                {/* Balloon tie */}
                 <div
                   className="absolute left-1/2 -translate-x-1/2"
                   style={{
-                    bottom: -8,
+                    bottom: -6,
                     width: 0,
                     height: 0,
-                    borderLeft: "6px solid transparent",
-                    borderRight: "6px solid transparent",
-                    borderTop: `10px solid ${b.color}`,
+                    borderLeft: "5px solid transparent",
+                    borderRight: "5px solid transparent",
+                    borderTop: `8px solid ${b.color}`,
                   }}
                 />
-                {/* Curving string */}
                 <svg
                   width="2"
                   height={b.string}
                   className="absolute left-1/2 top-full -translate-x-1/2"
                 >
                   <path
-                    d={`M 1 0 Q 6 ${b.string * 0.3}, 1 ${b.string * 0.5} T 1 ${b.string}`}
-                    stroke="rgba(255,255,255,0.55)"
-                    strokeWidth="1.5"
+                    d={`M 1 0 Q 5 ${b.string * 0.3}, 1 ${b.string * 0.5} T 1 ${b.string}`}
+                    stroke="rgba(250, 243, 232, 0.4)"
+                    strokeWidth="1.2"
                     fill="none"
                   />
                 </svg>
@@ -102,56 +101,111 @@ export default function Loader() {
             </motion.div>
           ))}
 
-          {/* Center logo + brand reveal */}
+          {/* Center logo with rotating botanical ring */}
           <div className="relative z-10 flex flex-col items-center text-center px-8">
             <motion.div
-              initial={{ scale: 0, rotate: -30, opacity: 0 }}
-              animate={{ scale: 1, rotate: 0, opacity: 1 }}
-              transition={{ duration: 1.1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-28 h-28 md:w-36 md:h-36 rounded-full bg-white/95 shadow-2xl flex items-center justify-center"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-32 h-32 md:w-40 md:h-40"
             >
-              <Image
-                src="/logo.png"
-                alt="One Touch Event Decor logo"
-                fill
-                className="object-contain p-3"
-                priority
-              />
+              {/* Outer rotating botanical ring */}
+              <svg
+                viewBox="0 0 200 200"
+                className="absolute inset-0 w-full h-full animate-slow-spin"
+              >
+                <defs>
+                  <path
+                    id="botanicalCircle"
+                    d="M 100, 100 m -85, 0 a 85, 85 0 1, 0 170, 0 a 85, 85 0 1, 0 -170, 0"
+                  />
+                </defs>
+                <text
+                  fontSize="7"
+                  fill="#E07856"
+                  fontFamily="serif"
+                  letterSpacing="3"
+                >
+                  <textPath href="#botanicalCircle">
+                    ONE TOUCH • EVENT DÉCOR • LUXURY BALLOON ARTISTRY • ONE TOUCH •
+                  </textPath>
+                </text>
+                {/* Small leaves around the circle */}
+                {[0, 60, 120, 180, 240, 300].map((deg) => (
+                  <g key={deg} transform={`rotate(${deg} 100 100)`}>
+                    <path
+                      d="M 100 14 C 96 8, 104 8, 100 14 Z"
+                      fill="#D4A5A5"
+                      opacity="0.7"
+                    />
+                  </g>
+                ))}
+              </svg>
+
+              {/* Inner static logo disc */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-4 rounded-full bg-[#FAF3E8] shadow-2xl flex items-center justify-center overflow-hidden"
+              >
+                <Image
+                  src="/logo.png"
+                  alt="One Touch Event Decor logo"
+                  fill
+                  className="object-contain p-2"
+                  priority
+                />
+              </motion.div>
+
               {/* Pulse ring */}
-              <span className="absolute inset-0 rounded-full border border-white/40 animate-pulse-glow" />
+              <motion.span
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1.2, opacity: 0 }}
+                transition={{
+                  duration: 2,
+                  delay: 0.8,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+                className="absolute inset-4 rounded-full border-2 border-[#E07856]"
+              />
             </motion.div>
 
+            {/* Brand name reveal */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 1.2, ease: "easeOut" }}
-              className="mt-8"
+              transition={{ duration: 0.7, delay: 1, ease: "easeOut" }}
+              className="mt-7"
             >
-              <p className="font-script text-2xl md:text-3xl text-[#E8B4B8] tracking-wide">
+              <p className="font-script text-xl md:text-2xl text-[#D4A5A5] tracking-wide">
                 One Touch
               </p>
-              <h1 className="font-display text-3xl md:text-5xl text-[#FBF5EC] tracking-luxe mt-1">
+              <h1 className="font-display text-2xl md:text-3xl text-[#FAF3E8] tracking-luxe mt-0.5">
                 EVENT DÉCOR
               </h1>
-              <div className="flex items-center justify-center gap-3 mt-4">
-                <span className="block w-10 h-px bg-[#C97B5C]" />
-                <span className="text-[#C97B5C] text-xs tracking-luxe">CRAFTED WITH CARE</span>
-                <span className="block w-10 h-px bg-[#C97B5C]" />
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <span className="block w-8 h-px bg-[#E07856]" />
+                <span className="text-[#E07856] text-[10px] tracking-luxe">
+                  MIDNIGHT VELVET
+                </span>
+                <span className="block w-8 h-px bg-[#E07856]" />
               </div>
             </motion.div>
 
-            {/* Loading line */}
+            {/* Loading line — shorter & faster */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.6 }}
-              className="mt-8 w-44 md:w-56 h-px bg-white/15 overflow-hidden"
+              transition={{ delay: 1.3 }}
+              className="mt-6 w-32 md:w-40 h-px bg-[#FAF3E8]/15 overflow-hidden"
             >
               <motion.div
-                className="h-full bg-gradient-to-r from-[#E8B4B8] via-[#C97B5C] to-[#E8D5B7]"
+                className="h-full bg-gradient-to-r from-[#D4A5A5] via-[#E07856] to-[#F0A88E]"
                 initial={{ x: "-100%" }}
                 animate={{ x: "100%" }}
-                transition={{ duration: 1.6, delay: 1.7, ease: "easeInOut" }}
+                transition={{ duration: 1.0, delay: 1.4, ease: "easeInOut" }}
               />
             </motion.div>
           </div>

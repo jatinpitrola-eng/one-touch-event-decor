@@ -60,11 +60,11 @@ export default function DecorStyles() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-[1.05]"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-[1.05]"
             >
               Six Forms of
               <br />
-              <span className="font-script italic text-[#C97B5C]">Balloon Artistry</span>
+              <span className="font-script italic text-[#E07856]">Balloon Artistry</span>
             </motion.h2>
           </div>
           <motion.p
@@ -98,20 +98,20 @@ export default function DecorStyles() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {/* Top number */}
-              <span className="absolute top-4 right-4 font-display text-5xl font-bold text-[#FBF5EC]/30">
+              <span className="absolute top-4 right-4 font-display text-5xl font-bold text-[#FAF3E8]/30">
                 0{i + 1}
               </span>
               {/* Overlay text */}
-              <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-[#1F3D34]/95 via-[#1F3D34]/60 to-transparent">
-                <h3 className="font-display text-xl md:text-2xl font-bold text-[#FBF5EC]">
+              <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-[#4A1A28]/95 via-[#4A1A28]/60 to-transparent">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-[#FAF3E8]">
                   {s.name}
                 </h3>
-                <p className="mt-1 text-sm text-[#FBF5EC]/80 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500 overflow-hidden leading-relaxed">
+                <p className="mt-1 text-sm text-[#FAF3E8]/80 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500 overflow-hidden leading-relaxed">
                   {s.desc}
                 </p>
               </div>
               {/* Accent line */}
-              <div className="absolute left-5 right-5 bottom-3 h-px bg-[#C97B5C] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700" />
+              <div className="absolute left-5 right-5 bottom-3 h-px bg-[#E07856] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700" />
             </motion.article>
           ))}
         </div>

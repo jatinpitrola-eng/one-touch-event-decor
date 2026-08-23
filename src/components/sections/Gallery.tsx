@@ -37,10 +37,10 @@ export default function Gallery() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-tight"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-tight"
           >
             Moments We&apos;ve{" "}
-            <span className="font-script italic text-[#C97B5C]">Styled</span>
+            <span className="font-script italic text-[#E07856]">Styled</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -62,8 +62,8 @@ export default function Gallery() {
               onClick={() => setFilter(c)}
               className={`px-5 py-2 text-sm tracking-wide rounded-full transition-all duration-300 ${
                 filter === c
-                  ? "bg-[#1F3D34] text-[#FBF5EC] shadow-md"
-                  : "bg-transparent text-[#1F3D34] border border-[#1F3D34]/20 hover:border-[#C97B5C] hover:text-[#C97B5C]"
+                  ? "bg-[#4A1A28] text-[#FAF3E8] shadow-md"
+                  : "bg-transparent text-[#4A1A28] border border-[#4A1A28]/20 hover:border-[#E07856] hover:text-[#E07856]"
               }`}
             >
               {c}
@@ -97,16 +97,16 @@ export default function Gallery() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1F3D34]/95 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5">
-                  <span className="text-[10px] tracking-luxe text-[#E8D5B7] mb-1">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4A1A28]/95 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5">
+                  <span className="text-[10px] tracking-luxe text-[#E8DDC8] mb-1">
                     {item.category.toUpperCase()}
                   </span>
-                  <h3 className="font-display text-xl font-bold text-[#FBF5EC]">
+                  <h3 className="font-display text-xl font-bold text-[#FAF3E8]">
                     {item.title}
                   </h3>
                 </div>
-                <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-[#FBF5EC]/20 backdrop-blur-md border border-[#FBF5EC]/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-[#FBF5EC] text-lg leading-none">+</span>
+                <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-[#FAF3E8]/20 backdrop-blur-md border border-[#FAF3E8]/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-[#FAF3E8] text-lg leading-none">+</span>
                 </div>
               </motion.button>
             ))}
@@ -122,11 +122,11 @@ export default function Gallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActive(null)}
-            className="fixed inset-0 z-[80] bg-[#122821]/95 backdrop-blur-xl flex items-center justify-center p-4"
+            className="fixed inset-0 z-[80] bg-[#2A0E18]/95 backdrop-blur-xl flex items-center justify-center p-4"
           >
             <button
               aria-label="Close"
-              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-[#FBF5EC]/10 border border-[#FBF5EC]/30 flex items-center justify-center text-[#FBF5EC] hover:bg-[#C97B5C] hover:border-[#C97B5C] transition-colors"
+              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-[#FAF3E8]/10 border border-[#FAF3E8]/30 flex items-center justify-center text-[#FAF3E8] hover:bg-[#E07856] hover:border-[#E07856] transition-colors"
               onClick={() => setActive(null)}
             >
               <X className="w-5 h-5" />
@@ -146,15 +146,15 @@ export default function Gallery() {
                 className="object-cover"
                 sizes="100vw"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#122821] to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#2A0E18] to-transparent">
                 {(() => {
                   const it = GALLERY.find((g) => g.url === active);
                   return it ? (
                     <>
-                      <p className="text-[10px] tracking-luxe text-[#E8D5B7] mb-1">
+                      <p className="text-[10px] tracking-luxe text-[#E8DDC8] mb-1">
                         {it.category.toUpperCase()}
                       </p>
-                      <h3 className="font-display text-2xl font-bold text-[#FBF5EC]">
+                      <h3 className="font-display text-2xl font-bold text-[#FAF3E8]">
                         {it.title}
                       </h3>
                     </>

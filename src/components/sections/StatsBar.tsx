@@ -49,26 +49,26 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function StatsBar() {
   return (
-    <section className="relative py-16 md:py-20 bg-[#1F3D34] text-[#FBF5EC] overflow-hidden grain-overlay">
+    <section className="relative py-16 md:py-20 bg-[#4A1A28] text-[#FAF3E8] overflow-hidden grain-overlay">
       {/* Decorative leaves */}
       <div className="absolute top-6 left-6 opacity-20">
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
           <path
             d="M30 5 C 15 15, 15 45, 30 55 C 45 45, 45 15, 30 5 Z"
-            stroke="#E8B4B8"
+            stroke="#D4A5A5"
             strokeWidth="1"
           />
-          <path d="M30 5 L 30 55" stroke="#E8B4B8" strokeWidth="0.5" />
+          <path d="M30 5 L 30 55" stroke="#D4A5A5" strokeWidth="0.5" />
         </svg>
       </div>
       <div className="absolute bottom-6 right-6 opacity-20 rotate-180">
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
           <path
             d="M30 5 C 15 15, 15 45, 30 55 C 45 45, 45 15, 30 5 Z"
-            stroke="#E8B4B8"
+            stroke="#D4A5A5"
             strokeWidth="1"
           />
-          <path d="M30 5 L 30 55" stroke="#E8B4B8" strokeWidth="0.5" />
+          <path d="M30 5 L 30 55" stroke="#D4A5A5" strokeWidth="0.5" />
         </svg>
       </div>
 
@@ -83,13 +83,13 @@ export default function StatsBar() {
               transition={{ duration: 0.7, delay: i * 0.12 }}
               className="text-center"
             >
-              <p className="font-display font-bold text-4xl md:text-6xl text-[#FBF5EC]">
+              <p className="font-display font-bold text-4xl md:text-6xl text-[#FAF3E8]">
                 <Counter value={s.value} suffix={s.suffix} />
               </p>
-              <p className="mt-2 text-xs md:text-sm tracking-wide-luxe text-[#E8D5B7] uppercase">
+              <p className="mt-2 text-xs md:text-sm tracking-wide-luxe text-[#E8DDC8] uppercase">
                 {s.label}
               </p>
-              <div className="mt-4 mx-auto w-12 h-px bg-[#C97B5C]" />
+              <div className="mt-4 mx-auto w-12 h-px bg-[#E07856]" />
             </motion.div>
           ))}
         </div>

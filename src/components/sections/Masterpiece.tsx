@@ -7,14 +7,14 @@ import { IMAGES } from "@/lib/images";
 
 export default function Masterpiece() {
   return (
-    <section className="relative py-24 md:py-32 bg-[#122821] text-[#FBF5EC] overflow-hidden grain-overlay">
-      <span className="section-num absolute -top-8 right-4 !text-[#FBF5EC]/10">
+    <section className="relative py-24 md:py-32 bg-[#2A0E18] text-[#FAF3E8] overflow-hidden grain-overlay">
+      <span className="section-num absolute -top-8 right-4 !text-[#FAF3E8]/10">
         05
       </span>
 
       {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#C97B5C]/15 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#E8B4B8]/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#E07856]/15 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#D4A5A5]/10 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
@@ -26,11 +26,11 @@ export default function Masterpiece() {
             transition={{ duration: 0.7 }}
             className="inline-flex items-center gap-3 mb-5"
           >
-            <span className="block w-10 h-px bg-[#C97B5C]" />
-            <span className="text-xs tracking-luxe text-[#C97B5C] font-medium">
+            <span className="block w-10 h-px bg-[#E07856]" />
+            <span className="text-xs tracking-luxe text-[#E07856] font-medium">
               THE MASTERPIECE
             </span>
-            <span className="block w-10 h-px bg-[#C97B5C]" />
+            <span className="block w-10 h-px bg-[#E07856]" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -41,7 +41,7 @@ export default function Masterpiece() {
           >
             A Single Piece,
             <br />
-            <span className="font-script italic text-[#E8B4B8]">
+            <span className="font-script italic text-[#D4A5A5]">
               A Thousand Memories
             </span>
           </motion.h2>
@@ -63,19 +63,19 @@ export default function Masterpiece() {
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#122821]/85 via-[#122821]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2A0E18]/85 via-[#2A0E18]/20 to-transparent" />
 
           {/* Floating quote card */}
           <div className="absolute bottom-6 left-6 right-6 md:right-auto md:max-w-md">
-            <Quote className="w-8 h-8 text-[#C97B5C] mb-3" />
-            <p className="font-display text-xl md:text-2xl font-medium leading-relaxed text-[#FBF5EC]">
+            <Quote className="w-8 h-8 text-[#E07856] mb-3" />
+            <p className="font-display text-xl md:text-2xl font-medium leading-relaxed text-[#FAF3E8]">
               This 18-foot spiral arch — built from 1,400 individual balloons
               across nine shades of blush, terracotta, and sage — greeted 600
               guests at the Sharma wedding reception.
             </p>
             <div className="mt-4 flex items-center gap-3">
-              <div className="w-12 h-px bg-[#C97B5C]" />
-              <span className="text-xs tracking-luxe text-[#E8D5B7]">
+              <div className="w-12 h-px bg-[#E07856]" />
+              <span className="text-xs tracking-luxe text-[#E8DDC8]">
                 FEATURED INSTALLATION · DEC 2024
               </span>
             </div>
@@ -83,9 +83,9 @@ export default function Masterpiece() {
 
           {/* Top right meta */}
           <div className="absolute top-6 right-6 text-right">
-            <p className="text-[10px] tracking-luxe text-[#E8D5B7]">MATERIALS</p>
+            <p className="text-[10px] tracking-luxe text-[#E8DDC8]">MATERIALS</p>
             <p className="font-display text-lg mt-1">1,400 balloons</p>
-            <p className="text-[10px] tracking-luxe text-[#E8D5B7] mt-3">SHADES</p>
+            <p className="text-[10px] tracking-luxe text-[#E8DDC8] mt-3">SHADES</p>
             <p className="font-display text-lg mt-1">9 custom tones</p>
           </div>
         </motion.div>
@@ -104,12 +104,12 @@ export default function Masterpiece() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="border-t border-[#E8B4B8]/20 pt-4"
+              className="border-t border-[#D4A5A5]/20 pt-4"
             >
-              <p className="font-display text-3xl md:text-4xl font-bold text-[#E8B4B8]">
+              <p className="font-display text-3xl md:text-4xl font-bold text-[#D4A5A5]">
                 {s.num}
               </p>
-              <p className="mt-1 text-xs tracking-luxe text-[#FBF5EC]/70 uppercase">
+              <p className="mt-1 text-xs tracking-luxe text-[#FAF3E8]/70 uppercase">
                 {s.label}
               </p>
             </motion.div>

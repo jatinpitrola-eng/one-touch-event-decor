@@ -48,7 +48,7 @@ export default function About() {
                 sizes="(max-width: 1024px) 65vw, 30vw"
               />
             </div>
-            <div className="absolute bottom-0 right-0 w-[60%] h-[55%] rounded-[1.5rem] overflow-hidden shadow-2xl border-4 border-[#FBF5EC] zoom-img">
+            <div className="absolute bottom-0 right-0 w-[60%] h-[55%] rounded-[1.5rem] overflow-hidden shadow-2xl border-4 border-[#FAF3E8] zoom-img">
               <Image
                 src={IMAGES.family[0]}
                 alt="Family function balloon decor"
@@ -58,7 +58,7 @@ export default function About() {
               />
             </div>
             {/* Floating leaf badge */}
-            <div className="absolute top-1/2 right-2 md:right-8 w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#C97B5C] flex flex-col items-center justify-center text-[#FBF5EC] shadow-xl">
+            <div className="absolute top-1/2 right-2 md:right-8 w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#E07856] flex flex-col items-center justify-center text-[#FAF3E8] shadow-xl">
               <span className="font-script text-2xl md:text-3xl leading-none">Since</span>
               <span className="font-display text-3xl md:text-4xl font-bold leading-none">2017</span>
             </div>
@@ -81,12 +81,12 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-[1.05]"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-[1.05]"
             >
               Where Artistry
               <br />
               Meets{" "}
-              <span className="font-script text-[#C97B5C] italic">Celebration</span>
+              <span className="font-script text-[#E07856] italic">Celebration</span>
             </motion.h2>
 
             <motion.p
@@ -127,10 +127,10 @@ export default function About() {
                   transition={{ duration: 0.7, delay: 0.1 + i * 0.1 }}
                   className="group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#1F3D34]/8 flex items-center justify-center mb-3 group-hover:bg-[#C97B5C] transition-colors">
-                    <p.icon className="w-5 h-5 text-[#1F3D34] group-hover:text-[#FBF5EC] transition-colors" />
+                  <div className="w-12 h-12 rounded-full bg-[#4A1A28]/8 flex items-center justify-center mb-3 group-hover:bg-[#E07856] transition-colors">
+                    <p.icon className="w-5 h-5 text-[#4A1A28] group-hover:text-[#FAF3E8] transition-colors" />
                   </div>
-                  <h4 className="font-display text-lg font-semibold text-[#1F3D34]">
+                  <h4 className="font-display text-lg font-semibold text-[#4A1A28]">
                     {p.title}
                   </h4>
                   <p className="mt-2 text-sm text-[#6B5D4A] leading-relaxed">

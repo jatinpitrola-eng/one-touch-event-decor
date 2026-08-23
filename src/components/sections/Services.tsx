@@ -78,10 +78,10 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-tight"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-tight"
           >
             One Studio,{" "}
-            <span className="font-script italic text-[#C97B5C]">Every Occasion</span>
+            <span className="font-script italic text-[#E07856]">Every Occasion</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -115,22 +115,22 @@ export default function Services() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1F3D34]/95 via-[#1F3D34]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#4A1A28]/95 via-[#4A1A28]/40 to-transparent" />
               {/* Icon */}
-              <div className="absolute top-5 left-5 w-12 h-12 rounded-full bg-[#FBF5EC]/15 backdrop-blur-md border border-[#FBF5EC]/30 flex items-center justify-center">
-                <s.icon className="w-5 h-5 text-[#FBF5EC]" />
+              <div className="absolute top-5 left-5 w-12 h-12 rounded-full bg-[#FAF3E8]/15 backdrop-blur-md border border-[#FAF3E8]/30 flex items-center justify-center">
+                <s.icon className="w-5 h-5 text-[#FAF3E8]" />
               </div>
               {/* Corner arrow */}
-              <div className="absolute top-5 right-5 w-10 h-10 rounded-full bg-[#C97B5C] flex items-center justify-center opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                <ArrowUpRight className="w-4 h-4 text-[#FBF5EC]" />
+              <div className="absolute top-5 right-5 w-10 h-10 rounded-full bg-[#E07856] flex items-center justify-center opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                <ArrowUpRight className="w-4 h-4 text-[#FAF3E8]" />
               </div>
               {/* Text */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-[#FBF5EC]">
-                <p className="text-[10px] tracking-luxe text-[#E8D5B7] mb-1">
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-[#FAF3E8]">
+                <p className="text-[10px] tracking-luxe text-[#E8DDC8] mb-1">
                   {s.tagline}
                 </p>
                 <h3 className="font-display text-2xl md:text-3xl font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm text-[#FBF5EC]/85 leading-relaxed max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                <p className="mt-2 text-sm text-[#FAF3E8]/85 leading-relaxed max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
                   {s.desc}
                 </p>
               </div>
@@ -149,7 +149,7 @@ export default function Services() {
           <p className="text-[#6B5D4A] mb-4">Don&apos;t see exactly what you imagined?</p>
           <a
             href="#booking"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F3D34] text-[#FBF5EC] tracking-wide rounded-full hover:bg-[#C97B5C] transition-all duration-500 shadow-lg"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#4A1A28] text-[#FAF3E8] tracking-wide rounded-full hover:bg-[#E07856] transition-all duration-500 shadow-lg"
           >
             Tell Us Your Vision
             <span>→</span>

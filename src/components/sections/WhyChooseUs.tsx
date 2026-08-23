@@ -57,8 +57,8 @@ const FEATURES = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-24 md:py-32 bg-luxe-emerald text-[#FBF5EC] overflow-hidden grain-overlay">
-      <span className="section-num absolute -top-8 left-4 !text-[#FBF5EC]/10">
+    <section className="relative py-24 md:py-32 bg-luxe-wine text-[#FAF3E8] overflow-hidden grain-overlay">
+      <span className="section-num absolute -top-8 left-4 !text-[#FAF3E8]/10">
         10
       </span>
 
@@ -72,11 +72,11 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.7 }}
             className="inline-flex items-center gap-3 mb-5"
           >
-            <span className="block w-10 h-px bg-[#E8B4B8]" />
-            <span className="text-xs tracking-luxe font-medium text-[#E8B4B8]">
+            <span className="block w-10 h-px bg-[#D4A5A5]" />
+            <span className="text-xs tracking-luxe font-medium text-[#D4A5A5]">
               WHY ONE TOUCH
             </span>
-            <span className="block w-10 h-px bg-[#E8B4B8]" />
+            <span className="block w-10 h-px bg-[#D4A5A5]" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
           >
             The Little Things,
             <br />
-            <span className="font-script italic text-[#E8B4B8]">
+            <span className="font-script italic text-[#D4A5A5]">
               Done Exceptionally
             </span>
           </motion.h2>
@@ -104,11 +104,11 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.7, delay: i * 0.08 }}
               className="group glass-card-dark rounded-2xl p-6 hover-lift"
             >
-              <div className="w-12 h-12 rounded-full bg-[#C97B5C]/20 border border-[#C97B5C]/40 flex items-center justify-center mb-4 group-hover:bg-[#C97B5C] transition-all">
-                <f.icon className="w-5 h-5 text-[#E8B4B8] group-hover:text-[#FBF5EC] transition-colors" />
+              <div className="w-12 h-12 rounded-full bg-[#E07856]/20 border border-[#E07856]/40 flex items-center justify-center mb-4 group-hover:bg-[#E07856] transition-all">
+                <f.icon className="w-5 h-5 text-[#D4A5A5] group-hover:text-[#FAF3E8] transition-colors" />
               </div>
               <h3 className="font-display text-lg md:text-xl font-bold">{f.title}</h3>
-              <p className="mt-2 text-sm text-[#FBF5EC]/75 leading-relaxed">
+              <p className="mt-2 text-sm text-[#FAF3E8]/75 leading-relaxed">
                 {f.desc}
               </p>
             </motion.div>
@@ -123,10 +123,10 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.8 }}
           className="mt-16 text-center"
         >
-          <p className="font-script text-2xl md:text-3xl text-[#E8B4B8]">
+          <p className="font-script text-2xl md:text-3xl text-[#D4A5A5]">
             8 years, 500+ events, zero complaints.
           </p>
-          <p className="mt-2 text-sm text-[#FBF5EC]/70">
+          <p className="mt-2 text-sm text-[#FAF3E8]/70">
             We don&apos;t take that record lightly.
           </p>
         </motion.div>

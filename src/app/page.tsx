@@ -1,6 +1,8 @@
 "use client";
 
 import Loader from "@/components/sections/Loader";
+import CustomCursor from "@/components/sections/CustomCursor";
+import ScrollProgress from "@/components/sections/ScrollProgress";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import StatsBar from "@/components/sections/StatsBar";
@@ -17,26 +19,37 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import FAQ from "@/components/sections/FAQ";
 import Booking from "@/components/sections/Booking";
 import Footer from "@/components/sections/Footer";
+import SectionDivider from "@/components/sections/SectionDivider";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col bg-background text-foreground">
       <Loader />
+      <CustomCursor />
+      <ScrollProgress />
       <Navbar />
       <main className="flex-1">
         <Hero />
         <StatsBar />
+        <SectionDivider variant="light" />
         <About />
+        <SectionDivider variant="light" />
         <Services />
         <FamilyFunctions />
+        <SectionDivider variant="light" />
         <DecorStyles />
         <Masterpiece />
+        <SectionDivider variant="light" />
         <Process />
+        <SectionDivider variant="light" />
         <Gallery />
         <Testimonials />
+        <SectionDivider variant="light" />
         <Pricing />
         <WhyChooseUs />
+        <SectionDivider variant="light" />
         <FAQ />
+        <SectionDivider variant="light" />
         <Booking />
       </main>
       <Footer />

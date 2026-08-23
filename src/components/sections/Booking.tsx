@@ -40,7 +40,7 @@ export default function Booking() {
   };
 
   const INPUT_CLASS =
-    "w-full bg-[#FBF5EC]/60 border border-[#E5D9C4] rounded-xl px-4 py-3 text-[#1F3D34] placeholder:text-[#6B5D4A]/60 focus:outline-none focus:border-[#C97B5C] focus:ring-2 focus:ring-[#C97B5C]/30 transition-all";
+    "w-full bg-[#FAF3E8]/60 border border-[#E8DDC8] rounded-xl px-4 py-3 text-[#4A1A28] placeholder:text-[#6B5D4A]/60 focus:outline-none focus:border-[#E07856] focus:ring-2 focus:ring-[#E07856]/30 transition-all";
 
   return (
     <section
@@ -68,12 +68,12 @@ export default function Booking() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-[1.05]"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-[1.05]"
             >
               Let&apos;s Plan
               <br />
               Your{" "}
-              <span className="font-script italic text-[#C97B5C]">
+              <span className="font-script italic text-[#E07856]">
                 Moment
               </span>
             </motion.h2>
@@ -101,33 +101,33 @@ export default function Booking() {
                 href="tel:+919999999999"
                 className="flex items-center gap-4 group"
               >
-                <span className="w-12 h-12 rounded-full bg-[#1F3D34] flex items-center justify-center group-hover:bg-[#C97B5C] transition-colors">
-                  <Phone className="w-5 h-5 text-[#FBF5EC]" />
+                <span className="w-12 h-12 rounded-full bg-[#4A1A28] flex items-center justify-center group-hover:bg-[#E07856] transition-colors">
+                  <Phone className="w-5 h-5 text-[#FAF3E8]" />
                 </span>
                 <div>
-                  <p className="text-xs tracking-luxe text-[#C97B5C] uppercase">Call</p>
-                  <p className="font-display text-lg text-[#1F3D34]">+91 99999 99999</p>
+                  <p className="text-xs tracking-luxe text-[#E07856] uppercase">Call</p>
+                  <p className="font-display text-lg text-[#4A1A28]">+91 99999 99999</p>
                 </div>
               </a>
               <a
                 href="mailto:hello@onetouchevents.in"
                 className="flex items-center gap-4 group"
               >
-                <span className="w-12 h-12 rounded-full bg-[#1F3D34] flex items-center justify-center group-hover:bg-[#C97B5C] transition-colors">
-                  <Mail className="w-5 h-5 text-[#FBF5EC]" />
+                <span className="w-12 h-12 rounded-full bg-[#4A1A28] flex items-center justify-center group-hover:bg-[#E07856] transition-colors">
+                  <Mail className="w-5 h-5 text-[#FAF3E8]" />
                 </span>
                 <div>
-                  <p className="text-xs tracking-luxe text-[#C97B5C] uppercase">Email</p>
-                  <p className="font-display text-lg text-[#1F3D34]">hello@onetouchevents.in</p>
+                  <p className="text-xs tracking-luxe text-[#E07856] uppercase">Email</p>
+                  <p className="font-display text-lg text-[#4A1A28]">hello@onetouchevents.in</p>
                 </div>
               </a>
               <div className="flex items-center gap-4">
-                <span className="w-12 h-12 rounded-full bg-[#1F3D34] flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-[#FBF5EC]" />
+                <span className="w-12 h-12 rounded-full bg-[#4A1A28] flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-[#FAF3E8]" />
                 </span>
                 <div>
-                  <p className="text-xs tracking-luxe text-[#C97B5C] uppercase">Studio</p>
-                  <p className="font-display text-lg text-[#1F3D34]">Bandra West, Mumbai 400050</p>
+                  <p className="text-xs tracking-luxe text-[#E07856] uppercase">Studio</p>
+                  <p className="font-display text-lg text-[#4A1A28]">Bandra West, Mumbai 400050</p>
                 </div>
               </div>
             </motion.div>
@@ -143,14 +143,14 @@ export default function Booking() {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full border border-[#1F3D34]/30 flex items-center justify-center text-[#1F3D34] hover:bg-[#1F3D34] hover:text-[#FBF5EC] transition-colors"
+                className="w-10 h-10 rounded-full border border-[#4A1A28]/30 flex items-center justify-center text-[#4A1A28] hover:bg-[#4A1A28] hover:text-[#FAF3E8] transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
                 href="#"
                 aria-label="Facebook"
-                className="w-10 h-10 rounded-full border border-[#1F3D34]/30 flex items-center justify-center text-[#1F3D34] hover:bg-[#1F3D34] hover:text-[#FBF5EC] transition-colors"
+                className="w-10 h-10 rounded-full border border-[#4A1A28]/30 flex items-center justify-center text-[#4A1A28] hover:bg-[#4A1A28] hover:text-[#FAF3E8] transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -163,7 +163,7 @@ export default function Booking() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9 }}
-            className="bg-[#FFFCF5] rounded-[1.5rem] p-6 md:p-10 shadow-xl border border-[#E5D9C4]"
+            className="bg-[#FFFCF5] rounded-[1.5rem] p-6 md:p-10 shadow-xl border border-[#E8DDC8]"
           >
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-16">
@@ -171,11 +171,11 @@ export default function Booking() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 200 }}
-                  className="w-20 h-20 rounded-full bg-[#1F3D34] text-[#FBF5EC] flex items-center justify-center mb-6"
+                  className="w-20 h-20 rounded-full bg-[#4A1A28] text-[#FAF3E8] flex items-center justify-center mb-6"
                 >
                   <Check className="w-10 h-10" />
                 </motion.div>
-                <h3 className="font-display text-2xl font-bold text-[#1F3D34]">
+                <h3 className="font-display text-2xl font-bold text-[#4A1A28]">
                   Inquiry Received!
                 </h3>
                 <p className="mt-3 text-[#6B5D4A] max-w-sm">
@@ -187,7 +187,7 @@ export default function Booking() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs tracking-wide-luxe text-[#1F3D34] uppercase">
+                    <label className="text-xs tracking-wide-luxe text-[#4A1A28] uppercase">
                       Full Name
                     </label>
                     <input
@@ -201,7 +201,7 @@ export default function Booking() {
                     />
                   </div>
                   <div>
-                    <label className="text-xs tracking-wide-luxe text-[#1F3D34] uppercase">
+                    <label className="text-xs tracking-wide-luxe text-[#4A1A28] uppercase">
                       Phone
                     </label>
                     <input
@@ -217,7 +217,7 @@ export default function Booking() {
                 </div>
 
                 <div>
-                  <label className="text-xs tracking-wide-luxe text-[#1F3D34] uppercase">
+                  <label className="text-xs tracking-wide-luxe text-[#4A1A28] uppercase">
                     Email
                   </label>
                   <input
@@ -233,7 +233,7 @@ export default function Booking() {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs tracking-wide-luxe text-[#1F3D34] uppercase">
+                    <label className="text-xs tracking-wide-luxe text-[#4A1A28] uppercase">
                       Event Type
                     </label>
                     <select
@@ -252,7 +252,7 @@ export default function Booking() {
                     </select>
                   </div>
                   <div>
-                    <label className="text-xs tracking-wide-luxe text-[#1F3D34] uppercase">
+                    <label className="text-xs tracking-wide-luxe text-[#4A1A28] uppercase">
                       Event Date
                     </label>
                     <input
@@ -266,7 +266,7 @@ export default function Booking() {
                 </div>
 
                 <div>
-                  <label className="text-xs tracking-wide-luxe text-[#1F3D34] uppercase">
+                  <label className="text-xs tracking-wide-luxe text-[#4A1A28] uppercase">
                     Venue / Location
                   </label>
                   <input
@@ -280,7 +280,7 @@ export default function Booking() {
                 </div>
 
                 <div>
-                  <label className="text-xs tracking-wide-luxe text-[#1F3D34] uppercase">
+                  <label className="text-xs tracking-wide-luxe text-[#4A1A28] uppercase">
                     Tell Us About Your Vision
                   </label>
                   <textarea
@@ -295,7 +295,7 @@ export default function Booking() {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#1F3D34] text-[#FBF5EC] tracking-wide rounded-full hover:bg-[#C97B5C] transition-all duration-500 shadow-lg"
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#4A1A28] text-[#FAF3E8] tracking-wide rounded-full hover:bg-[#E07856] transition-all duration-500 shadow-lg"
                 >
                   Send My Inquiry
                   <Send className="w-4 h-4" />

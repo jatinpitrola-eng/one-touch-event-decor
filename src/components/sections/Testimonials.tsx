@@ -50,12 +50,12 @@ export default function Testimonials() {
   const r = REVIEWS[idx];
 
   return (
-    <section className="relative py-24 md:py-32 bg-luxe-blush overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-luxe-rose overflow-hidden">
       <span className="section-num absolute -top-8 left-4">08</span>
 
       {/* Decorative big quote */}
       <Quote
-        className="absolute top-10 right-10 md:right-20 w-32 h-32 md:w-48 md:h-48 text-[#1F3D34]/8"
+        className="absolute top-10 right-10 md:right-20 w-32 h-32 md:w-48 md:h-48 text-[#4A1A28]/8"
         strokeWidth={1}
       />
 
@@ -68,11 +68,11 @@ export default function Testimonials() {
           transition={{ duration: 0.7 }}
           className="inline-flex items-center gap-3 mb-5"
         >
-          <span className="block w-10 h-px bg-[#1F3D34]" />
-          <span className="text-xs tracking-luxe font-medium text-[#1F3D34]">
+          <span className="block w-10 h-px bg-[#4A1A28]" />
+          <span className="text-xs tracking-luxe font-medium text-[#4A1A28]">
             KIND WORDS
           </span>
-          <span className="block w-10 h-px bg-[#1F3D34]" />
+          <span className="block w-10 h-px bg-[#4A1A28]" />
         </motion.div>
 
         <motion.h2
@@ -80,11 +80,11 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-tight mb-12"
+          className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-tight mb-12"
         >
           Loved by Families,
           <br />
-          <span className="font-script italic text-[#C97B5C]">
+          <span className="font-script italic text-[#E07856]">
             Trusted by Brands
           </span>
         </motion.h2>
@@ -102,17 +102,17 @@ export default function Testimonials() {
             >
               <div className="flex justify-center gap-1 mb-5">
                 {[...Array(r.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#C97B5C] text-[#C97B5C]" />
+                  <Star key={i} className="w-5 h-5 fill-[#E07856] text-[#E07856]" />
                 ))}
               </div>
-              <p className="font-display text-xl md:text-2xl text-[#1F3D34] leading-relaxed italic">
+              <p className="font-display text-xl md:text-2xl text-[#4A1A28] leading-relaxed italic">
                 &ldquo;{r.text}&rdquo;
               </p>
               <div className="mt-6">
-                <p className="font-display text-lg font-bold text-[#1F3D34]">
+                <p className="font-display text-lg font-bold text-[#4A1A28]">
                   {r.name}
                 </p>
-                <p className="text-xs tracking-wide-luxe text-[#C97B5C] mt-1 uppercase">
+                <p className="text-xs tracking-wide-luxe text-[#E07856] mt-1 uppercase">
                   {r.event}
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default function Testimonials() {
           <button
             aria-label="Previous review"
             onClick={prev}
-            className="w-12 h-12 rounded-full bg-[#1F3D34] text-[#FBF5EC] flex items-center justify-center hover:bg-[#C97B5C] transition-colors"
+            className="w-12 h-12 rounded-full bg-[#4A1A28] text-[#FAF3E8] flex items-center justify-center hover:bg-[#E07856] transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -137,7 +137,7 @@ export default function Testimonials() {
                 aria-label={`Review ${i + 1}`}
                 onClick={() => setIdx(i)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  i === idx ? "w-8 bg-[#1F3D34]" : "w-2 bg-[#1F3D34]/30"
+                  i === idx ? "w-8 bg-[#4A1A28]" : "w-2 bg-[#4A1A28]/30"
                 }`}
               />
             ))}
@@ -145,7 +145,7 @@ export default function Testimonials() {
           <button
             aria-label="Next review"
             onClick={next}
-            className="w-12 h-12 rounded-full bg-[#1F3D34] text-[#FBF5EC] flex items-center justify-center hover:bg-[#C97B5C] transition-colors"
+            className="w-12 h-12 rounded-full bg-[#4A1A28] text-[#FAF3E8] flex items-center justify-center hover:bg-[#E07856] transition-colors"
           >
             <ChevronRight className="w-5 h-5" />
           </button>

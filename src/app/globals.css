@@ -45,81 +45,91 @@
 }
 
 /* ============================================
-   ONE TOUCH EVENT DECOR — LUXURY PALETTE
-   Emerald + Blush + Cream + Terracotta
-   (No blue, no gold)
+   ONE TOUCH EVENT DÉCOR — "MIDNIGHT VELVET"
+   Deep Wine + Coral + Ivory + Dusty Rose + Sage
+   (No blue, no gold — fresh, romantic, dramatic)
    ============================================ */
 :root {
   --radius: 0.75rem;
 
   /* Surfaces */
-  --background: #FBF5EC;            /* warm cream */
-  --foreground: #1A1A1A;            /* rich charcoal */
+  --background: #FAF3E8;            /* warm ivory */
+  --foreground: #1A1410;            /* rich espresso charcoal */
   --card: #FFFCF5;                  /* ivory card */
-  --card-foreground: #1A1A1A;
+  --card-foreground: #1A1410;
   --popover: #FFFCF5;
-  --popover-foreground: #1A1A1A;
+  --popover-foreground: #1A1410;
 
-  /* Brand colors */
-  --emerald: #1F3D34;               /* deep emerald */
-  --emerald-soft: #2F5749;
-  --emerald-deep: #122821;
-  --blush: #E8B4B8;                 /* blush rose */
-  --blush-soft: #F5D9DB;
-  --terracotta: #C97B5C;            /* terracotta */
-  --terracotta-soft: #E8A589;
-  --sage: #94A88B;                  /* sage green */
-  --champagne: #E8D5B7;             /* soft champagne */
-  --charcoal: #1A1A1A;
+  /* BRAND COLORS — Midnight Velvet */
+  --wine: #4A1A28;                  /* deep wine — primary dark */
+  --wine-deep: #2A0E18;             /* black cherry — deepest dark */
+  --wine-soft: #6B2A3B;             /* lighter wine */
+  --wine-glow: #7A1F37;             /* wine accent */
 
-  /* Tailwind aliases */
-  --primary: #1F3D34;
-  --primary-foreground: #FBF5EC;
-  --secondary: #F5EDE0;
-  --secondary-foreground: #1F3D34;
+  --coral: #E07856;                 /* warm coral — main accent */
+  --coral-soft: #F0A88E;            /* soft coral */
+  --coral-deep: #C45A3B;            /* deeper coral */
+
+  --rose: #D4A5A5;                  /* dusty rose — soft accent */
+  --rose-soft: #F0D5D7;             /* very soft rose */
+  --rose-deep: #B07878;            /* deep rose */
+
+  --sage: #9CAF88;                  /* sage green — natural accent */
+  --sage-soft: #C5D1B5;             /* soft sage */
+  --sage-deep: #6E7F5C;            /* deep sage */
+
+  --ivory: #FAF3E8;                 /* ivory background */
+  --cream: #FFFCF5;                 /* cream surface */
+  --champagne: #E8DDC8;             /* soft champagne (light, not gold) */
+
+  /* Tailwind aliases — bind to new palette */
+  --primary: #4A1A28;               /* wine */
+  --primary-foreground: #FAF3E8;   /* ivory */
+  --secondary: #F5EDE0;            /* soft cream */
+  --secondary-foreground: #4A1A28;
   --muted: #F0E6D6;
   --muted-foreground: #6B5D4A;
-  --accent: #C97B5C;
-  --accent-foreground: #FBF5EC;
+  --accent: #E07856;               /* coral */
+  --accent-foreground: #FAF3E8;
   --destructive: #B23A2C;
-  --border: #E5D9C4;
-  --input: #E5D9C4;
-  --ring: #C97B5C;
+  --border: #E8DDC8;
+  --input: #E8DDC8;
+  --ring: #E07856;
 
-  --chart-1: #1F3D34;
-  --chart-2: #E8B4B8;
-  --chart-3: #C97B5C;
-  --chart-4: #94A88B;
-  --chart-5: #E8D5B7;
-  --sidebar: #1F3D34;
-  --sidebar-foreground: #FBF5EC;
-  --sidebar-primary: #C97B5C;
-  --sidebar-primary-foreground: #FBF5EC;
-  --sidebar-accent: #122821;
-  --sidebar-accent-foreground: #FBF5EC;
-  --sidebar-border: #2F5749;
-  --sidebar-ring: #C97B5C;
+  --chart-1: #4A1A28;
+  --chart-2: #E07856;
+  --chart-3: #D4A5A5;
+  --chart-4: #9CAF88;
+  --chart-5: #E8DDC8;
+  --sidebar: #4A1A28;
+  --sidebar-foreground: #FAF3E8;
+  --sidebar-primary: #E07856;
+  --sidebar-primary-foreground: #FAF3E8;
+  --sidebar-accent: #2A0E18;
+  --sidebar-accent-foreground: #FAF3E8;
+  --sidebar-border: #6B2A3B;
+  --sidebar-ring: #E07856;
 }
 
 .dark {
-  --background: #122821;
-  --foreground: #FBF5EC;
-  --card: #1F3D34;
-  --card-foreground: #FBF5EC;
-  --popover: #1F3D34;
-  --popover-foreground: #FBF5EC;
-  --primary: #E8B4B8;
-  --primary-foreground: #1A1A1A;
-  --secondary: #2F5749;
-  --secondary-foreground: #FBF5EC;
-  --muted: #2F5749;
-  --muted-foreground: #B8A98E;
-  --accent: #C97B5C;
-  --accent-foreground: #FBF5EC;
+  --background: #2A0E18;
+  --foreground: #FAF3E8;
+  --card: #4A1A28;
+  --card-foreground: #FAF3E8;
+  --popover: #4A1A28;
+  --popover-foreground: #FAF3E8;
+  --primary: #E07856;
+  --primary-foreground: #FAF3E8;
+  --secondary: #6B2A3B;
+  --secondary-foreground: #FAF3E8;
+  --muted: #6B2A3B;
+  --muted-foreground: #D4A5A5;
+  --accent: #D4A5A5;
+  --accent-foreground: #2A0E18;
   --destructive: #E07563;
-  --border: #2F5749;
-  --input: #2F5749;
-  --ring: #E8B4B8;
+  --border: #6B2A3B;
+  --input: #6B2A3B;
+  --ring: #D4A5A5;
 }
 
 @layer base {
@@ -135,13 +145,13 @@
     overflow-x: hidden;
   }
   ::selection {
-    background-color: var(--emerald);
-    color: var(--background);
+    background-color: var(--wine);
+    color: var(--ivory);
   }
 }
 
 /* ============================================
-   CUSTOM SCROLLBAR
+   CUSTOM SCROLLBAR — Wine + Coral
    ============================================ */
 ::-webkit-scrollbar {
   width: 10px;
@@ -151,12 +161,12 @@
   background: #F5EDE0;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1F3D34, #2F5749);
+  background: linear-gradient(180deg, #4A1A28, #6B2A3B);
   border-radius: 6px;
   border: 2px solid #F5EDE0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #C97B5C, #E8B4B8);
+  background: linear-gradient(180deg, #E07856, #D4A5A5);
 }
 
 /* ============================================
@@ -177,12 +187,12 @@
   letter-spacing: 0.25em;
 }
 
-/* Decorative divider */
+/* Decorative divider with botanical accent */
 .luxe-divider {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--terracotta);
+  color: var(--coral);
 }
 .luxe-divider::before,
 .luxe-divider::after {
@@ -197,7 +207,7 @@
    KEYFRAME ANIMATIONS
    ============================================ */
 
-/* Balloon float (used in loader + hero) */
+/* Balloon float */
 @keyframes balloonFloat {
   0%, 100% {
     transform: translateY(0) rotate(-2deg);
@@ -208,25 +218,6 @@
 }
 .animate-balloon-float {
   animation: balloonFloat 6s ease-in-out infinite;
-}
-
-/* Balloon rise (loader intro) */
-@keyframes balloonRise {
-  0% {
-    transform: translateY(100vh) scale(0.5);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  60% {
-    transform: translateY(-20vh) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-120vh) scale(1.1);
-    opacity: 0;
-  }
 }
 
 /* Slow rotate for ornamental rings */
@@ -249,11 +240,11 @@
 .shimmer-text {
   background: linear-gradient(
     90deg,
-    var(--emerald) 0%,
-    var(--terracotta) 25%,
-    var(--blush) 50%,
-    var(--terracotta) 75%,
-    var(--emerald) 100%
+    var(--wine) 0%,
+    var(--coral) 25%,
+    var(--rose) 50%,
+    var(--coral) 75%,
+    var(--wine) 100%
   );
   background-size: 200% auto;
   background-clip: text;
@@ -271,13 +262,13 @@
   animation: marquee 40s linear infinite;
 }
 
-/* Pulse glow for hero accents */
+/* Pulse glow for accents */
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(232, 180, 184, 0.4);
+    box-shadow: 0 0 0 0 rgba(224, 120, 86, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px 12px rgba(232, 180, 184, 0.2);
+    box-shadow: 0 0 40px 12px rgba(224, 120, 86, 0.2);
   }
 }
 .animate-pulse-glow {
@@ -293,18 +284,6 @@
   animation: bob 3s ease-in-out infinite;
 }
 
-/* Fade up reveal */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* String sway (for balloon strings) */
 @keyframes sway {
   0%, 100% { transform: rotate(-3deg); }
@@ -315,17 +294,30 @@
   transform-origin: top center;
 }
 
-/* Scale in for loader */
-@keyframes scaleIn {
-  0% { transform: scale(0); opacity: 0; }
-  60% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
+/* Drift — slow horizontal drift for ambient balloons */
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(15px, -20px) rotate(2deg); }
+  66% { transform: translate(-10px, 15px) rotate(-2deg); }
+}
+.animate-drift {
+  animation: drift 12s ease-in-out infinite;
 }
 
-/* Loader fade out */
-@keyframes loaderExit {
-  0% { opacity: 1; visibility: visible; }
-  100% { opacity: 0; visibility: hidden; }
+/* Section reveal — clip-path wipe */
+@keyframes clipReveal {
+  0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+  100% { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+
+/* Gradient mesh shift */
+@keyframes meshShift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(50px, -30px) scale(1.1); }
+  66% { transform: translate(-30px, 40px) scale(0.95); }
+}
+.animate-mesh-shift {
+  animation: meshShift 20s ease-in-out infinite;
 }
 
 /* Texture: subtle grain */
@@ -342,18 +334,54 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Gradient backgrounds */
+/* ============================================
+   GRADIENT BACKGROUNDS — Midnight Velvet
+   ============================================ */
 .bg-luxe-cream {
-  background: radial-gradient(ellipse at top, #FFFCF5 0%, #FBF5EC 50%, #F5EDE0 100%);
+  background: radial-gradient(ellipse at top, #FFFCF5 0%, #FAF3E8 50%, #F5EDE0 100%);
 }
-.bg-luxe-emerald {
-  background: radial-gradient(ellipse at top, #2F5749 0%, #1F3D34 50%, #122821 100%);
+.bg-luxe-wine {
+  background: radial-gradient(ellipse at top, #6B2A3B 0%, #4A1A28 50%, #2A0E18 100%);
 }
-.bg-luxe-blush {
-  background: linear-gradient(135deg, #F5D9DB 0%, #E8B4B8 100%);
+.bg-luxe-rose {
+  background: linear-gradient(135deg, #F0D5D7 0%, #D4A5A5 100%);
 }
-.bg-luxe-terracotta {
-  background: linear-gradient(135deg, #E8A589 0%, #C97B5C 100%);
+.bg-luxe-coral {
+  background: linear-gradient(135deg, #F0A88E 0%, #E07856 100%);
+}
+
+/* Gradient mesh — animated soft blobs */
+.gradient-mesh {
+  position: relative;
+  background: #FAF3E8;
+  overflow: hidden;
+}
+.gradient-mesh::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(224, 120, 86, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(212, 165, 165, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(156, 175, 136, 0.10) 0%, transparent 50%);
+  animation: meshShift 20s ease-in-out infinite;
+}
+.gradient-mesh-dark {
+  position: relative;
+  background: #2A0E18;
+  overflow: hidden;
+}
+.gradient-mesh-dark::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(224, 120, 86, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(212, 165, 165, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(156, 175, 136, 0.10) 0%, transparent 50%);
+  animation: meshShift 25s ease-in-out infinite;
 }
 
 /* Glass card */
@@ -361,13 +389,13 @@
   background: rgba(255, 252, 245, 0.7);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(229, 217, 196, 0.6);
+  border: 1px solid rgba(232, 221, 200, 0.6);
 }
 .glass-card-dark {
-  background: rgba(31, 61, 52, 0.6);
+  background: rgba(74, 26, 40, 0.55);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(232, 180, 184, 0.2);
+  border: 1px solid rgba(224, 120, 86, 0.25);
 }
 
 /* Hover lift */
@@ -376,7 +404,7 @@
 }
 .hover-lift:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 48px -16px rgba(31, 61, 52, 0.25);
+  box-shadow: 0 24px 48px -16px rgba(74, 26, 40, 0.3);
 }
 
 /* Image zoom on hover */
@@ -397,8 +425,8 @@
   font-weight: 900;
   line-height: 0.8;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(31, 61, 52, 0.08);
-  text-stroke: 1px rgba(31, 61, 52, 0.08);
+  -webkit-text-stroke: 1px rgba(74, 26, 40, 0.08);
+  text-stroke: 1px rgba(74, 26, 40, 0.08);
   user-select: none;
   pointer-events: none;
 }
@@ -423,6 +451,63 @@
 .underline-draw:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* ============================================
+   CUSTOM CURSOR — Luxe dot + magnetic ring
+   ============================================ */
+@media (hover: hover) and (pointer: fine) {
+  body.luxe-cursor,
+  body.luxe-cursor * {
+    cursor: none !important;
+  }
+  .luxe-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--coral);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+  }
+  .luxe-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(74, 26, 40, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s;
+  }
+  .luxe-cursor-hovering .luxe-cursor-dot {
+    width: 0;
+    height: 0;
+  }
+  .luxe-cursor-hovering .luxe-cursor-ring {
+    width: 60px;
+    height: 60px;
+    border-color: var(--coral);
+    background: rgba(224, 120, 86, 0.1);
+  }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  z-index: 9999;
+  background: linear-gradient(90deg, var(--wine) 0%, var(--coral) 50%, var(--rose) 100%);
+  transition: width 0.1s ease-out;
 }
 
 /* Reduced motion */

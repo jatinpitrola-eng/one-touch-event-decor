@@ -52,10 +52,10 @@ export default function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-tight"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-tight"
           >
             From Hello to{" "}
-            <span className="font-script italic text-[#C97B5C]">Reveal</span>
+            <span className="font-script italic text-[#E07856]">Reveal</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ export default function Process() {
         {/* Steps */}
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Connecting line */}
-          <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#1F3D34]/20 to-transparent" />
+          <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#4A1A28]/20 to-transparent" />
 
           {STEPS.map((s, i) => (
             <motion.div
@@ -85,14 +85,14 @@ export default function Process() {
               className="relative text-center"
             >
               <div className="relative inline-flex">
-                <div className="w-24 h-24 rounded-full bg-[#1F3D34] text-[#FBF5EC] flex items-center justify-center shadow-xl relative z-10">
+                <div className="w-24 h-24 rounded-full bg-[#4A1A28] text-[#FAF3E8] flex items-center justify-center shadow-xl relative z-10">
                   <s.icon className="w-8 h-8" />
                 </div>
-                <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#C97B5C] text-[#FBF5EC] flex items-center justify-center font-display text-sm font-bold z-10">
+                <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#E07856] text-[#FAF3E8] flex items-center justify-center font-display text-sm font-bold z-10">
                   {s.step}
                 </span>
               </div>
-              <h3 className="mt-6 font-display text-xl md:text-2xl font-bold text-[#1F3D34]">
+              <h3 className="mt-6 font-display text-xl md:text-2xl font-bold text-[#4A1A28]">
                 {s.title}
               </h3>
               <p className="mt-3 text-sm text-[#6B5D4A] leading-relaxed">

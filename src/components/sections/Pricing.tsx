@@ -77,10 +77,10 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-tight"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-tight"
           >
             Pick Your{" "}
-            <span className="font-script italic text-[#C97B5C]">Experience</span>
+            <span className="font-script italic text-[#E07856]">Experience</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -106,12 +106,12 @@ export default function Pricing() {
               transition={{ duration: 0.7, delay: i * 0.12 }}
               className={`relative rounded-[1.5rem] p-8 shadow-lg hover-lift ${
                 p.highlight
-                  ? "bg-[#1F3D34] text-[#FBF5EC] lg:-translate-y-4"
-                  : "bg-[#FFFCF5] text-[#1F3D34] border border-[#E5D9C4]"
+                  ? "bg-[#4A1A28] text-[#FAF3E8] lg:-translate-y-4"
+                  : "bg-[#FFFCF5] text-[#4A1A28] border border-[#E8DDC8]"
               }`}
             >
               {p.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-[#C97B5C] text-[#FBF5EC] text-[10px] tracking-luxe px-4 py-1.5 rounded-full shadow-md">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-[#E07856] text-[#FAF3E8] text-[10px] tracking-luxe px-4 py-1.5 rounded-full shadow-md">
                   <Crown className="w-3 h-3" />
                   MOST LOVED
                 </span>
@@ -120,7 +120,7 @@ export default function Pricing() {
               <h3 className="font-display text-2xl md:text-3xl font-bold">{p.name}</h3>
               <p
                 className={`mt-2 text-sm ${
-                  p.highlight ? "text-[#E8D5B7]" : "text-[#6B5D4A]"
+                  p.highlight ? "text-[#E8DDC8]" : "text-[#6B5D4A]"
                 }`}
               >
                 {p.tagline}
@@ -130,7 +130,7 @@ export default function Pricing() {
                 {p.price !== "Custom" && (
                   <span
                     className={`font-display text-xl ${
-                      p.highlight ? "text-[#E8D5B7]" : "text-[#6B5D4A]"
+                      p.highlight ? "text-[#E8DDC8]" : "text-[#6B5D4A]"
                     }`}
                   >
                     ₹
@@ -142,7 +142,7 @@ export default function Pricing() {
               </div>
               <p
                 className={`text-xs tracking-luxe mt-1 ${
-                  p.highlight ? "text-[#E8D5B7]" : "text-[#C97B5C]"
+                  p.highlight ? "text-[#E8DDC8]" : "text-[#E07856]"
                 } uppercase`}
               >
                 {p.period}
@@ -150,7 +150,7 @@ export default function Pricing() {
 
               <div
                 className={`my-6 h-px ${
-                  p.highlight ? "bg-[#E8B4B8]/20" : "bg-[#E5D9C4]"
+                  p.highlight ? "bg-[#D4A5A5]/20" : "bg-[#E8DDC8]"
                 }`}
               />
 
@@ -160,15 +160,15 @@ export default function Pricing() {
                     <span
                       className={`mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center ${
                         p.highlight
-                          ? "bg-[#C97B5C] text-[#FBF5EC]"
-                          : "bg-[#1F3D34]/10 text-[#1F3D34]"
+                          ? "bg-[#E07856] text-[#FAF3E8]"
+                          : "bg-[#4A1A28]/10 text-[#4A1A28]"
                       }`}
                     >
                       <Check className="w-3 h-3" />
                     </span>
                     <span
                       className={
-                        p.highlight ? "text-[#FBF5EC]/90" : "text-[#1F3D34]"
+                        p.highlight ? "text-[#FAF3E8]/90" : "text-[#4A1A28]"
                       }
                     >
                       {f}
@@ -181,8 +181,8 @@ export default function Pricing() {
                 href="#booking"
                 className={`mt-8 block text-center px-6 py-3 rounded-full tracking-wide transition-all duration-500 ${
                   p.highlight
-                    ? "bg-[#C97B5C] text-[#FBF5EC] hover:bg-[#FBF5EC] hover:text-[#1F3D34]"
-                    : "bg-[#1F3D34] text-[#FBF5EC] hover:bg-[#C97B5C]"
+                    ? "bg-[#E07856] text-[#FAF3E8] hover:bg-[#FAF3E8] hover:text-[#4A1A28]"
+                    : "bg-[#4A1A28] text-[#FAF3E8] hover:bg-[#E07856]"
                 }`}
               >
                 {p.price === "Custom" ? "Request a Quote" : "Book This Package"}

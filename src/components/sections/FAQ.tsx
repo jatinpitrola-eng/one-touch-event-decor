@@ -65,10 +65,10 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F3D34] leading-tight"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4A1A28] leading-tight"
           >
             Before You{" "}
-            <span className="font-script italic text-[#C97B5C]">Ask Us</span>
+            <span className="font-script italic text-[#E07856]">Ask Us</span>
           </motion.h2>
         </div>
 
@@ -83,9 +83,9 @@ export default function FAQ() {
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="bg-[#FFFCF5] border border-[#E5D9C4] rounded-2xl px-5 md:px-6 shadow-sm overflow-hidden data-[state=open]:shadow-md transition-shadow"
+                className="bg-[#FFFCF5] border border-[#E8DDC8] rounded-2xl px-5 md:px-6 shadow-sm overflow-hidden data-[state=open]:shadow-md transition-shadow"
               >
-                <AccordionTrigger className="text-left font-display text-base md:text-lg font-semibold text-[#1F3D34] hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-display text-base md:text-lg font-semibold text-[#4A1A28] hover:no-underline py-5">
                   {item.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-sm md:text-base text-[#6B5D4A] leading-relaxed pb-5">
@@ -106,7 +106,7 @@ export default function FAQ() {
           <p className="text-[#6B5D4A] mb-3">Still have a question?</p>
           <a
             href="#booking"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1F3D34] text-[#FBF5EC] tracking-wide rounded-full hover:bg-[#C97B5C] transition-all duration-500"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#4A1A28] text-[#FAF3E8] tracking-wide rounded-full hover:bg-[#E07856] transition-all duration-500"
           >
             Chat With Us
             <span>→</span>

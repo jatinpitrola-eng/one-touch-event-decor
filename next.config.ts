@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  // Hide the Next.js DevTools "N" badge (the floating circle the user noticed)
+  devIndicators: false,
   images: {
     remotePatterns: [
       {
