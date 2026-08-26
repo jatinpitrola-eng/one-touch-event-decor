@@ -1,22 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X, Save, RotateCcw, Upload, Plus, Trash2, ChevronDown, ChevronRight,
   Home, Sparkles, Users, Image as ImageIcon, Star, DollarSign,
-  HelpCircle, Phone, FileText, Settings, Eye, EyeOff, Check
+  HelpCircle, Phone, FileText, Settings, Eye, EyeOff, Check, Copy
 } from "lucide-react";
 import { useContent } from "./ContentProvider";
 import { SiteContent } from "@/lib/content";
+import ImageUpload from "./ImageUpload";
 
 type Tab =
   | "brand" | "hero" | "stats" | "about" | "services"
   | "family" | "decor" | "masterpiece" | "studio" | "process"
   | "gallery" | "testimonials" | "pricing" | "why"
-  | "faq" | "finalcta" | "booking" | "footer" | "publish";
+  | "faq" | "finalcta" | "booking" | "footer" | "publish" | "uploads";
 
 const TABS: { id: Tab; label: string; icon: any }[] = [
+  { id: "uploads", label: "Image Library", icon: ImageIcon },
   { id: "brand", label: "Brand & Contact", icon: Home },
   { id: "hero", label: "Hero Section", icon: Sparkles },
   { id: "stats", label: "Stats Bar", icon: Star },
@@ -140,6 +142,7 @@ function TabContent({
   update: (path: string, value: any) => void;
 }) {
   switch (tab) {
+    case "uploads": return <UploadsTab />;
     case "brand": return <BrandTab content={content} update={update} />;
     case "hero": return <HeroTab content={content} update={update} />;
     case "stats": return <StatsTab content={content} update={update} />;
@@ -217,7 +220,7 @@ function ImageField({
           type="url"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="https://..."
+          placeholder="https://... or /uploads/..."
           className="admin-input flex-1"
         />
         {value && (
@@ -226,6 +229,7 @@ function ImageField({
           </div>
         )}
       </div>
+      <ImageUpload currentUrl={value} onUploadSuccess={onChange} />
     </div>
   );
 }
@@ -723,6 +727,232 @@ function FooterTab({ content, update }: { content: SiteContent; update: any }) {
           rows={6}
           className="admin-input"
         />
+      </div>
+    </div>
+  );
+}
+
+// ============================================
+// Uploads Tab — browse all uploaded images
+// ============================================
+function UploadsTab() {
+  const [images, setImages] = useState<
+    { name: string; url: string; size: number; download_url?: string }[]
+  >([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [copiedUrl, setCopiedUrl] = useState("");
+  const [newUploads, setNewUploads] = useState(0);
+
+  const loadImages = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || "";
+      const owner = process.env.NEXT_PUBLIC_GITHUB_OWNER || "jatinpitrola-eng";
+      const repo = process.env.NEXT_PUBLIC_GITHUB_REPO || "one-touch-event-decor";
+      const res = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/public/uploads?ref=main`,
+        {
+          headers: {
+            Authorization: `token ${token}`,
+            Accept: "application/vnd.github+json",
+          },
+        }
+      );
+      if (res.status === 404) {
+        setImages([]);
+      } else if (!res.ok) {
+        throw new Error(`Failed to load uploads (HTTP ${res.status})`);
+      } else {
+        const data = await res.json();
+        const list = (Array.isArray(data) ? data : [])
+          .filter((f: any) => f.type === "file" && /\.(jpg|jpeg|png|webp|gif)$/i.test(f.name))
+          .map((f: any) => ({
+            name: f.name,
+            url: `/uploads/${f.name}`,
+            size: f.size || 0,
+            download_url: f.download_url,
+          }));
+        setImages(list);
+      }
+    } catch (e: any) {
+      setError(e.message || "Failed to load uploads.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadImages();
+  }, [newUploads]);
+
+  const copyUrl = (url: string) => {
+    navigator.clipboard?.writeText(url);
+    setCopiedUrl(url);
+    setTimeout(() => setCopiedUrl(""), 2000);
+  };
+
+  const deleteImage = async (name: string) => {
+    if (!confirm(`Delete ${name}? This cannot be undone.`)) return;
+    try {
+      const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || "";
+      const owner = process.env.NEXT_PUBLIC_GITHUB_OWNER || "jatinpitrola-eng";
+      const repo = process.env.NEXT_PUBLIC_GITHUB_REPO || "one-touch-event-decor";
+      const path = `public/uploads/${name}`;
+      // Get SHA
+      const getRes = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+        {
+          headers: {
+            Authorization: `token ${token}`,
+            Accept: "application/vnd.github+json",
+          },
+        }
+      );
+      if (!getRes.ok) throw new Error("Could not find file to delete.");
+      const data = await getRes.json();
+      const sha = data.sha;
+      // Delete
+      const delRes = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `token ${token}`,
+            Accept: "application/vnd.github+json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: `chore: delete image ${name} via admin panel`,
+            sha,
+            branch: "main",
+          }),
+        }
+      );
+      if (delRes.ok) {
+        setImages((prev) => prev.filter((i) => i.name !== name));
+      } else {
+        const err = await delRes.json();
+        alert("Failed to delete: " + (err.message || "Unknown error"));
+      }
+    } catch (e: any) {
+      alert("Error: " + e.message);
+    }
+  };
+
+  const formatSize = (bytes: number) => {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
+  };
+
+  return (
+    <div className="space-y-5">
+      <SectionHeader
+        title="Image Library"
+        sub="Upload, browse, copy URLs, and delete your uploaded images. All images are stored in your GitHub repo and served by Vercel."
+      />
+
+      {/* Quick uploader */}
+      <div className="bg-[#FCFAF3] border border-[#E5D9C0] rounded-2xl p-5">
+        <h4 className="font-display text-sm font-bold text-[#0B3D2E] mb-3">
+          Quick Upload
+        </h4>
+        <ImageUpload
+          onUploadSuccess={() => {
+            // Trigger reload after upload
+            setNewUploads((n) => n + 1);
+          }}
+        />
+        <p className="mt-3 text-xs text-[#6B5D4A]">
+          After uploading, copy the URL below and paste it into any image field
+          across other tabs (Hero, Gallery, Services, etc).
+        </p>
+      </div>
+
+      {/* Uploaded images grid */}
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <h4 className="font-display text-sm font-bold text-[#0B3D2E]">
+            All Uploaded Images ({images.length})
+          </h4>
+          <button
+            onClick={loadImages}
+            disabled={loading}
+            className="text-xs text-[#B87333] hover:underline"
+          >
+            {loading ? "Loading..." : "Refresh"}
+          </button>
+        </div>
+        {error && (
+          <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg p-3">
+            {error}
+          </p>
+        )}
+        {loading ? (
+          <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="aspect-square rounded-xl bg-[#E5D9C0]/40 animate-pulse"
+              />
+            ))}
+          </div>
+        ) : images.length === 0 ? (
+          <div className="text-center py-10 bg-[#FCFAF3] rounded-xl border border-dashed border-[#E5D9C0]">
+            <ImageIcon className="w-10 h-10 text-[#6B5D4A]/40 mx-auto mb-2" />
+            <p className="text-sm text-[#6B5D4A]">
+              No images uploaded yet. Use the uploader above to add your first image.
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {images.map((img) => (
+              <div
+                key={img.name}
+                className="group relative rounded-xl overflow-hidden border border-[#E5D9C0] bg-[#FCFAF3] hover:shadow-md transition-shadow"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={img.url}
+                    alt={img.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-2">
+                  <p className="text-[10px] text-[#6B5D4A] truncate" title={img.name}>
+                    {img.name}
+                  </p>
+                  <p className="text-[9px] text-[#6B5D4A]/60">
+                    {formatSize(img.size)}
+                  </p>
+                </div>
+                {/* Hover actions */}
+                <div className="absolute inset-0 bg-[#07261d]/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-2">
+                  <button
+                    onClick={() => copyUrl(img.url)}
+                    className="w-full flex items-center justify-center gap-1.5 px-2 py-1.5 bg-[#B87333] text-[#F7F1E8] text-[10px] rounded-md hover:bg-[#C68A4E] transition-colors"
+                  >
+                    {copiedUrl === img.url ? (
+                      <Check className="w-3 h-3" />
+                    ) : (
+                      <Copy className="w-3 h-3" />
+                    )}
+                    {copiedUrl === img.url ? "Copied!" : "Copy URL"}
+                  </button>
+                  <button
+                    onClick={() => deleteImage(img.name)}
+                    className="w-full flex items-center justify-center gap-1.5 px-2 py-1.5 bg-red-600 text-white text-[10px] rounded-md hover:bg-red-700 transition-colors"
+                  >
+                    <Trash2 className="w-3 h-3" />
+                    Delete
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
