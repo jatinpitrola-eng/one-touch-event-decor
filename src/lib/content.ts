@@ -75,10 +75,13 @@ export type SiteContent = {
   brandTagline: string;
   logoUrl: string;
   phone: string;
+  whatsapp: string;
   email: string;
   address: string;
   instagram: string;
   facebook: string;
+  youtube: string;
+  twitter: string;
 
   // Hero
   heroEyebrow: string;
@@ -237,11 +240,14 @@ export const DEFAULT_CONTENT: SiteContent = {
   brandScript: "One Touch",
   brandTagline: "EVENT DÉCOR",
   logoUrl: "/logo.png",
-  phone: "+91 99999 99999",
-  email: "hello@onetouchevents.in",
+  phone: "+91 9327760140",
+  whatsapp: "919327760140",
+  email: "onetouchballoondecoration@gmail.com",
   address: "Studio 12, Linking Road, Bandra West, Mumbai 400050",
-  instagram: "#",
-  facebook: "#",
+  instagram: "https://instagram.com/onetouchballoondecoration",
+  facebook: "https://facebook.com/onetouchballoondecoration",
+  youtube: "https://youtube.com/@onetouchballoondecoration",
+  twitter: "https://twitter.com/onetouchballoon",
 
   heroEyebrow: "LUXURY BALLOON ARTISTRY",
   heroLine1: "Where Every",

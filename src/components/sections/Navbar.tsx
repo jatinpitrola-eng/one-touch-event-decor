@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import Image from "next/image";
+import { useContent } from "@/components/admin/ContentProvider";
 
 const LINKS = [
   { label: "Home", href: "#home" },
@@ -16,6 +17,8 @@ const LINKS = [
 ];
 
 export default function Navbar({ onLogoClick }: { onLogoClick?: () => void }) {
+  const { content } = useContent();
+  const c = content;
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -86,11 +89,11 @@ export default function Navbar({ onLogoClick }: { onLogoClick?: () => void }) {
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+919999999999"
+              href={`tel:${c.phone}`}
               className="flex items-center gap-2 text-[#0B3D2E] text-sm hover:text-[#B87333] transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span>+91 99999 99999</span>
+              <span>{c.phone}</span>
             </a>
             <a
               href="#booking"
@@ -178,10 +181,10 @@ export default function Navbar({ onLogoClick }: { onLogoClick?: () => void }) {
                   Book a Consultation
                 </a>
                 <a
-                  href="tel:+919999999999"
+                  href={`tel:${c.phone}`}
                   className="mt-3 flex items-center justify-center gap-2 text-[#0B3D2E] text-sm"
                 >
-                  <Phone className="w-4 h-4" /> +91 99999 99999
+                  <Phone className="w-4 h-4" /> {c.phone}
                 </a>
               </div>
             </motion.aside>

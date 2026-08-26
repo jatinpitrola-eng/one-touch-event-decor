@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import { useContent } from "@/components/admin/ContentProvider";
 import type { GalleryItem } from "@/lib/content";
+import FullGalleryModal from "./FullGalleryModal";
 
 const CATEGORIES = ["All", "Weddings", "Birthdays", "Baby Showers", "Corporate", "Family", "Anniversary"] as const;
 type Category = (typeof CATEGORIES)[number];
@@ -14,9 +15,13 @@ export default function Gallery() {
   const { content } = useContent();
   const [filter, setFilter] = useState<Category>("All");
   const [active, setActive] = useState<string | null>(null);
+  const [showFull, setShowFull] = useState(false);
 
   const items: GalleryItem[] =
     filter === "All" ? content.gallery : content.gallery.filter((g) => g.category === filter);
+
+  // Show first 12 items in the section grid, rest in full gallery modal
+  const sectionItems = items.slice(0, 12);
 
   return (
     <section id="gallery" className="relative py-24 md:py-32 bg-luxe-cream overflow-hidden">
@@ -46,7 +51,7 @@ export default function Gallery() {
 
         <motion.div layout className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
           <AnimatePresence mode="popLayout">
-            {items.map((item, i) => (
+            {sectionItems.map((item, i) => (
               <motion.button
                 layout
                 key={item.id}
@@ -71,8 +76,29 @@ export default function Gallery() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* "View Full Gallery" button */}
+        {content.gallery.length > 12 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-10 text-center"
+          >
+            <button
+              onClick={() => setShowFull(true)}
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#0B3D2E] text-[#F7F1E8] tracking-wide rounded-full hover:bg-[#B87333] transition-all duration-500 shadow-lg"
+            >
+              View All Gallery
+              <span className="text-sm">({content.gallery.length} photos)</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </motion.div>
+        )}
       </div>
 
+      {/* Lightbox for section gallery */}
       <AnimatePresence>
         {active && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setActive(null)} className="fixed inset-0 z-[80] bg-[#07261d]/95 backdrop-blur-xl flex items-center justify-center p-4">
@@ -96,6 +122,9 @@ export default function Gallery() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Full Gallery Modal */}
+      <FullGalleryModal open={showFull} onClose={() => setShowFull(false)} />
     </section>
   );
 }

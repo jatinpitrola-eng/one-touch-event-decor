@@ -44,7 +44,12 @@ export default function FinalCTA() {
             </a>
           </MagneticButton>
           <MagneticButton strength={0.3}>
-            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-10 py-4 bg-transparent text-[#F7F1E8] tracking-wide rounded-full border border-[#F7F1E8]/30 hover:border-[#B87333] hover:text-[#B87333] transition-all duration-500">
+            <a
+              href={`https://wa.me/${c.whatsapp || "919327760140"}?text=Hi%20One%20Touch%2C%20I'd%20like%20to%20discuss%20an%20event`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-transparent text-[#F7F1E8] tracking-wide rounded-full border border-[#F7F1E8]/30 hover:border-[#B87333] hover:text-[#B87333] transition-all duration-500"
+            >
               {c.finalCtaButton2}
             </a>
           </MagneticButton>

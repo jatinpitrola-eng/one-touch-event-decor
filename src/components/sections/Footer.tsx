@@ -1,12 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Mail, MapPin, Instagram, Facebook, Heart } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, Twitter, MessageCircle, Heart } from "lucide-react";
 import { useContent } from "@/components/admin/ContentProvider";
 
 export default function Footer() {
   const { content } = useContent();
   const c = content;
+
+  const whatsappLink = `https://wa.me/${c.whatsapp || "919327760140"}?text=Hi%20One%20Touch%2C%20I'd%20like%20to%20discuss%20an%20event`;
+
+  // Social links from content (editable via admin)
+  const socials = [
+    { icon: Instagram, url: c.instagram, label: "Instagram" },
+    { icon: Facebook, url: c.facebook, label: "Facebook" },
+    { icon: MessageCircle, url: whatsappLink, label: "WhatsApp" },
+    { icon: Youtube, url: c.youtube, label: "YouTube" },
+    { icon: Twitter, url: c.twitter, label: "Twitter" },
+  ].filter((s) => s.url && s.url !== "#" && s.url !== "");
 
   return (
     <footer className="relative bg-[#07261d] text-[#F7F1E8] overflow-hidden">
@@ -25,13 +36,20 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-[#F7F1E8]/70 leading-relaxed">{c.footerDesc}</p>
-            <div className="flex gap-3 mt-5">
-              <a href={c.instagram} aria-label="Instagram" className="w-9 h-9 rounded-full border border-[#F7F1E8]/30 flex items-center justify-center hover:bg-[#B87333] hover:border-[#B87333] transition-colors">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href={c.facebook} aria-label="Facebook" className="w-9 h-9 rounded-full border border-[#F7F1E8]/30 flex items-center justify-center hover:bg-[#B87333] hover:border-[#B87333] transition-colors">
-                <Facebook className="w-4 h-4" />
-              </a>
+            {/* Social icons */}
+            <div className="flex gap-2 mt-5 flex-wrap">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.url}
+                  target={s.url.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="w-9 h-9 rounded-full border border-[#F7F1E8]/30 flex items-center justify-center hover:bg-[#B87333] hover:border-[#B87333] transition-colors"
+                >
+                  <s.icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -67,6 +85,10 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-0.5 text-[#B87333]" />
                 <a href={`mailto:${c.email}`} className="hover:text-[#B87333] transition-colors break-all">{c.email}</a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MessageCircle className="w-4 h-4 mt-0.5 text-[#B87333]" />
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-[#B87333] transition-colors">WhatsApp Chat</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#B87333]" />

@@ -307,11 +307,60 @@ function BrandTab({ content, update }: { content: SiteContent; update: any }) {
       <Field label="Brand Name (script font)" value={content.brandScript} onChange={(v) => update("brandScript", v)} />
       <Field label="Brand Tagline (small caps)" value={content.brandTagline} onChange={(v) => update("brandTagline", v)} />
       <ImageField label="Logo URL" value={content.logoUrl} onChange={(v) => update("logoUrl", v)} />
-      <Field label="Phone Number" value={content.phone} onChange={(v) => update("phone", v)} />
-      <Field label="Email Address" value={content.email} onChange={(v) => update("email", v)} />
-      <TextArea label="Studio Address" value={content.address} onChange={(v) => update("address", v)} rows={2} />
-      <Field label="Instagram URL" value={content.instagram} onChange={(v) => update("instagram", v)} />
-      <Field label="Facebook URL" value={content.facebook} onChange={(v) => update("facebook", v)} />
+
+      <div className="border-t border-[#E5D9C0] pt-5 mt-5">
+        <h3 className="font-display text-lg font-bold text-[#0B3D2E] mb-4">Contact Details</h3>
+        <Field label="Phone Number (with country code)" value={content.phone} onChange={(v) => update("phone", v)} />
+        <div className="mt-3">
+          <label className="admin-label">WhatsApp Number (digits only, with country code — e.g. 919327760140)</label>
+          <input
+            type="text"
+            value={content.whatsapp}
+            onChange={(e) => update("whatsapp", e.target.value.replace(/\D/g, ""))}
+            placeholder="919327760140"
+            className="admin-input"
+          />
+        </div>
+        <div className="mt-3">
+          <Field label="Email Address" value={content.email} onChange={(v) => update("email", v)} />
+        </div>
+        <TextArea label="Studio Address" value={content.address} onChange={(v) => update("address", v)} rows={2} />
+      </div>
+
+      <div className="border-t border-[#E5D9C0] pt-5 mt-5">
+        <h3 className="font-display text-lg font-bold text-[#0B3D2E] mb-4">Social Media Links</h3>
+        <p className="text-xs text-[#6B5D4A] mb-3">These links appear in the footer. Leave blank to hide an icon.</p>
+        <div className="space-y-3">
+          <div>
+            <label className="admin-label flex items-center gap-2">
+              <span className="w-4 h-4 rounded bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400"></span>
+              Instagram URL
+            </label>
+            <input type="url" value={content.instagram} onChange={(e) => update("instagram", e.target.value)} placeholder="https://instagram.com/..." className="admin-input" />
+          </div>
+          <div>
+            <label className="admin-label flex items-center gap-2">
+              <span className="w-4 h-4 rounded bg-[#1877F2]"></span>
+              Facebook URL
+            </label>
+            <input type="url" value={content.facebook} onChange={(e) => update("facebook", e.target.value)} placeholder="https://facebook.com/..." className="admin-input" />
+          </div>
+          <div>
+            <label className="admin-label flex items-center gap-2">
+              <span className="w-4 h-4 rounded bg-[#FF0000]"></span>
+              YouTube URL
+            </label>
+            <input type="url" value={content.youtube} onChange={(e) => update("youtube", e.target.value)} placeholder="https://youtube.com/@..." className="admin-input" />
+          </div>
+          <div>
+            <label className="admin-label flex items-center gap-2">
+              <span className="w-4 h-4 rounded bg-black"></span>
+              Twitter / X URL
+            </label>
+            <input type="url" value={content.twitter} onChange={(e) => update("twitter", e.target.value)} placeholder="https://twitter.com/..." className="admin-input" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
