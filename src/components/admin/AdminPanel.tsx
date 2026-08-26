@@ -775,18 +775,87 @@ function BookingTab({ content, update }: { content: SiteContent; update: any }) 
 function FooterTab({ content, update }: { content: SiteContent; update: any }) {
   return (
     <div className="space-y-5">
-      <SectionHeader title="Footer" sub="Bottom of the page." />
+      <SectionHeader title="Footer" sub="Bottom of the page. Edit description, social media links, and press logos." />
+
       <TextArea label="Description" value={content.footerDesc} onChange={(v) => update("footerDesc", v)} rows={3} />
       <Field label="Copyright Text" value={content.footerCopyright} onChange={(v) => update("footerCopyright", v)} />
-      <Field label="Press Section Title" value={content.pressTitle} onChange={(v) => update("pressTitle", v)} />
-      <div>
-        <label className="admin-label">Press Logos (one per line)</label>
-        <textarea
-          value={content.pressLogos.join("\n")}
-          onChange={(e) => update("pressLogos", e.target.value.split("\n").filter((l) => l.trim()))}
-          rows={6}
-          className="admin-input"
-        />
+
+      {/* Contact details (shown in footer) */}
+      <div className="border-t border-[#E5D9C0] pt-5 mt-5">
+        <h3 className="font-display text-lg font-bold text-[#0B3D2E] mb-4">Contact Details (shown in footer)</h3>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Field label="Phone Number" value={content.phone} onChange={(v) => update("phone", v)} />
+          <div>
+            <label className="admin-label">WhatsApp Number (digits only)</label>
+            <input
+              type="text"
+              value={content.whatsapp}
+              onChange={(e) => update("whatsapp", e.target.value.replace(/\D/g, ""))}
+              placeholder="919327760140"
+              className="admin-input"
+            />
+          </div>
+        </div>
+        <div className="mt-3">
+          <Field label="Email Address" value={content.email} onChange={(v) => update("email", v)} />
+        </div>
+        <div className="mt-3">
+          <TextArea label="Studio Address" value={content.address} onChange={(v) => update("address", v)} rows={2} />
+        </div>
+      </div>
+
+      {/* Social Media Links */}
+      <div className="border-t border-[#E5D9C0] pt-5 mt-5">
+        <h3 className="font-display text-lg font-bold text-[#0B3D2E] mb-2">Social Media Links</h3>
+        <p className="text-xs text-[#6B5D4A] mb-4">These icons appear in the footer. Leave a field blank to hide that icon.</p>
+        <div className="space-y-3">
+          <div>
+            <label className="admin-label flex items-center gap-2">
+              <span className="w-4 h-4 rounded bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400"></span>
+              Instagram URL
+            </label>
+            <input type="url" value={content.instagram} onChange={(e) => update("instagram", e.target.value)} placeholder="https://instagram.com/onetouchballoondecoration" className="admin-input" />
+          </div>
+          <div>
+            <label className="admin-label flex items-center gap-2">
+              <span className="w-4 h-4 rounded bg-[#1877F2]"></span>
+              Facebook URL
+            </label>
+            <input type="url" value={content.facebook} onChange={(e) => update("facebook", e.target.value)} placeholder="https://facebook.com/onetouchballoondecoration" className="admin-input" />
+          </div>
+          <div>
+            <label className="admin-label flex items-center gap-2">
+              <span className="w-4 h-4 rounded bg-[#FF0000]"></span>
+              YouTube URL
+            </label>
+            <input type="url" value={content.youtube} onChange={(e) => update("youtube", e.target.value)} placeholder="https://youtube.com/@onetouchballoondecoration" className="admin-input" />
+          </div>
+          <div>
+            <label className="admin-label flex items-center gap-2">
+              <span className="w-4 h-4 rounded bg-black"></span>
+              Twitter / X URL
+            </label>
+            <input type="url" value={content.twitter} onChange={(e) => update("twitter", e.target.value)} placeholder="https://twitter.com/onetouchballoon" className="admin-input" />
+          </div>
+        </div>
+        <p className="mt-3 text-xs text-[#6B5D4A]">
+          💡 WhatsApp icon uses the WhatsApp Number from above (no separate URL needed).
+        </p>
+      </div>
+
+      {/* Press section */}
+      <div className="border-t border-[#E5D9C0] pt-5 mt-5">
+        <h3 className="font-display text-lg font-bold text-[#0B3D2E] mb-4">Press / Featured In</h3>
+        <Field label="Press Section Title" value={content.pressTitle} onChange={(v) => update("pressTitle", v)} />
+        <div className="mt-3">
+          <label className="admin-label">Press Logos (one per line)</label>
+          <textarea
+            value={content.pressLogos.join("\n")}
+            onChange={(e) => update("pressLogos", e.target.value.split("\n").filter((l) => l.trim()))}
+            rows={6}
+            className="admin-input"
+          />
+        </div>
       </div>
     </div>
   );
