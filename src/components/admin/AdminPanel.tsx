@@ -744,12 +744,23 @@ function PublishTab() {
         return;
       }
 
-      // Use GitHub API to update content.json in the repo
-      // This triggers a Vercel rebuild automatically
-      const token = "REMOVED_TOKEN";
-      const owner = "jatinpitrola-eng";
-      const repo = "one-touch-event-decor";
+      // GitHub credentials — read from env (set in Vercel dashboard)
+      // For local dev, create a .env.local file with these values
+      // For production, add them as Vercel environment variables
+      const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || "";
+      const owner = process.env.NEXT_PUBLIC_GITHUB_OWNER || "jatinpitrola-eng";
+      const repo = process.env.NEXT_PUBLIC_GITHUB_REPO || "one-touch-event-decor";
       const path = "public/content.json";
+
+      if (!token) {
+        setResult({
+          success: false,
+          message:
+            "GitHub token not configured. Please set NEXT_PUBLIC_GITHUB_TOKEN environment variable in Vercel dashboard (Settings → Environment Variables).",
+        });
+        setPublishing(false);
+        return;
+      }
 
       // 1. Get current file SHA (if exists)
       const getRes = await fetch(
