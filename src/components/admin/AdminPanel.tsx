@@ -220,12 +220,23 @@ function ImageField({
           type="url"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="https://... or /uploads/..."
+          placeholder="Upload below or paste https://..."
           className="admin-input flex-1"
         />
         {value && (
-          <div className="w-16 h-16 rounded-lg overflow-hidden border border-[#E5D9C0] shrink-0">
-            <img src={value} alt="" className="w-full h-full object-cover" />
+          <div className="w-16 h-16 rounded-lg overflow-hidden border border-[#E5D9C0] shrink-0 bg-[#F0E8D8] flex items-center justify-center">
+            <img
+              src={value}
+              alt=""
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = "none";
+                const parent = (e.target as HTMLImageElement).parentElement;
+                if (parent) {
+                  parent.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B5D4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.5-3.5L9 20"/></svg>';
+                }
+              }}
+            />
           </div>
         )}
       </div>
@@ -770,7 +781,8 @@ function UploadsTab() {
           .filter((f: any) => f.type === "file" && /\.(jpg|jpeg|png|webp|gif)$/i.test(f.name))
           .map((f: any) => ({
             name: f.name,
-            url: `/uploads/${f.name}`,
+            // Use raw.githubusercontent.com for instant display (no rebuild needed)
+            url: `https://raw.githubusercontent.com/${owner}/${repo}/main/public/uploads/${f.name}`,
             size: f.size || 0,
             download_url: f.download_url,
           }));
@@ -913,11 +925,18 @@ function UploadsTab() {
                 key={img.name}
                 className="group relative rounded-xl overflow-hidden border border-[#E5D9C0] bg-[#FCFAF3] hover:shadow-md transition-shadow"
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-square overflow-hidden bg-[#F0E8D8]">
                   <img
                     src={img.url}
                     alt={img.name}
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = "none";
+                      const parent = (e.target as HTMLImageElement).parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#6B5D4A;font-size:10px;">Loading...</div>';
+                      }
+                    }}
                   />
                 </div>
                 <div className="p-2">

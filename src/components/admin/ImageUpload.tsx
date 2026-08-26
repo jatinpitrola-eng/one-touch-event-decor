@@ -133,8 +133,9 @@ export default function ImageUpload({
         throw new Error(err.message || `Upload failed (HTTP ${res.status})`);
       }
 
-      // Return relative URL — Vercel serves from public/
-      return `/uploads/${filename}`;
+      // Return raw.githubusercontent.com URL — instantly available
+      // (no need to wait for Vercel rebuild)
+      return `https://raw.githubusercontent.com/${owner}/${repo}/main/public/uploads/${filename}`;
     },
     []
   );
