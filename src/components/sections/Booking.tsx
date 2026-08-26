@@ -19,11 +19,40 @@ export default function Booking() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Build a WhatsApp message with all booking details
+    const waNumber = c.whatsapp || "919327760140";
+    const formatDate = (d: string) => {
+      if (!d) return "Not specified";
+      try {
+        const dt = new Date(d);
+        return dt.toLocaleDateString("en-IN", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        });
+      } catch {
+        return d;
+      }
+    };
+    const msg =
+      `*New Event Inquiry — One Touch Event Décor*\n\n` +
+      `*Name:* ${form.name}\n` +
+      `*Phone:* ${form.phone}\n` +
+      `*Email:* ${form.email}\n\n` +
+      `*Event Type:* ${form.eventType}\n` +
+      `*Event Date:* ${formatDate(form.date)}\n` +
+      `*Venue / Location:* ${form.location || "Not specified"}\n\n` +
+      `*Vision / Requirements:*\n${form.message || "—"}\n\n` +
+      `_Sent via onetouchballoondecoration.com_`;
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+    // Open WhatsApp in new tab
+    window.open(waUrl, "_blank");
+    // Show success state on the form
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
       setForm({ name: "", phone: "", email: "", eventType: "Wedding", date: "", location: "", message: "" });
-    }, 4000);
+    }, 6000);
   };
 
   const INPUT_CLASS = "w-full bg-[#F7F1E8]/60 border border-[#E5D9C0] rounded-xl px-4 py-3 text-[#0B3D2E] placeholder:text-[#6B5D4A]/60 focus:outline-none focus:border-[#B87333] focus:ring-2 focus:ring-[#B87333]/30 transition-all";
@@ -89,11 +118,17 @@ export default function Booking() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.9 }} className="bg-[#FCFAF3] rounded-[1.5rem] p-6 md:p-10 shadow-xl border border-[#E5D9C0]">
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-16">
-                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200 }} className="w-20 h-20 rounded-full bg-[#0B3D2E] text-[#F7F1E8] flex items-center justify-center mb-6">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200 }} className="w-20 h-20 rounded-full bg-[#25D366] text-white flex items-center justify-center mb-6">
                   <Check className="w-10 h-10" />
                 </motion.div>
                 <h3 className="font-display text-2xl font-bold text-[#0B3D2E]">{c.bookingSuccessTitle}</h3>
                 <p className="mt-3 text-[#6B5D4A] max-w-sm">{c.bookingSuccessText}</p>
+                <p className="mt-4 text-sm text-[#25D366] font-medium">
+                  ✓ WhatsApp message sent to {c.phone || "+91 9327760140"}
+                </p>
+                <p className="mt-1 text-xs text-[#6B5D4A]">
+                  Didn&apos;t open? Check your pop-up blocker or message us directly.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -133,9 +168,11 @@ export default function Booking() {
                   <textarea name="message" rows={4} value={form.message} onChange={handleChange} placeholder="Approx guest count, palette ideas, special requests..." className={`mt-1.5 ${INPUT_CLASS} resize-none`} />
                 </div>
                 <button type="submit" className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#0B3D2E] text-[#F7F1E8] tracking-wide rounded-full hover:bg-[#B87333] transition-all duration-500 shadow-lg">
-                  Send My Inquiry <Send className="w-4 h-4" />
+                  Send Inquiry via WhatsApp <Send className="w-4 h-4" />
                 </button>
-                <p className="text-center text-xs text-[#6B5D4A]">We reply within 24 hours · No deposit for first consultation</p>
+                <p className="text-center text-xs text-[#6B5D4A]">
+                  Submitting opens WhatsApp with your details pre-filled · No deposit needed
+                </p>
               </form>
             )}
           </motion.div>
