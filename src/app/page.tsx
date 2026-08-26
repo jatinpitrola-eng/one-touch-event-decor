@@ -1,5 +1,8 @@
 "use client";
 
+import { useState, useCallback } from "react";
+import { ContentProvider } from "@/components/admin/ContentProvider";
+import AdminGate from "@/components/admin/AdminGate";
 import Loader from "@/components/sections/Loader";
 import CustomCursor from "@/components/sections/CustomCursor";
 import CursorFollowGlow from "@/components/sections/CursorFollowGlow";
@@ -27,42 +30,51 @@ import SectionDivider from "@/components/sections/SectionDivider";
 import FloatingContactButton from "@/components/sections/FloatingContactButton";
 
 export default function Home() {
+  const [logoClicks, setLogoClicks] = useState(0);
+
+  const handleLogoClick = useCallback(() => {
+    setLogoClicks((n) => n + 1);
+  }, []);
+
   return (
-    <div className="relative min-h-screen flex flex-col bg-background text-foreground">
-      <Loader />
-      <CustomCursor />
-      <CursorFollowGlow />
-      <ScrollProgress />
-      <Navbar />
-      <FloatingContactButton />
-      <main className="flex-1">
-        <Hero />
-        <PressLogos />
-        <StatsBar />
-        <SectionDivider variant="light" />
-        <About />
-        <SectionDivider variant="light" />
-        <Services />
-        <FamilyFunctions />
-        <SectionDivider variant="light" />
-        <DecorStyles />
-        <Masterpiece />
-        <SectionDivider variant="light" />
-        <BehindStudio />
-        <Process />
-        <SectionDivider variant="light" />
-        <Gallery />
-        <Testimonials />
-        <SectionDivider variant="light" />
-        <Pricing />
-        <WhyChooseUs />
-        <SectionDivider variant="light" />
-        <FAQ />
-        <SectionDivider variant="light" />
-        <FinalCTA />
-        <Booking />
-      </main>
-      <Footer />
-    </div>
+    <ContentProvider>
+      <div className="relative min-h-screen flex flex-col bg-background text-foreground">
+        <Loader />
+        <CustomCursor />
+        <CursorFollowGlow />
+        <ScrollProgress />
+        <Navbar onLogoClick={handleLogoClick} />
+        <AdminGate logoClickTrigger={logoClicks} />
+        <FloatingContactButton />
+        <main className="flex-1">
+          <Hero />
+          <PressLogos />
+          <StatsBar />
+          <SectionDivider variant="light" />
+          <About />
+          <SectionDivider variant="light" />
+          <Services />
+          <FamilyFunctions />
+          <SectionDivider variant="light" />
+          <DecorStyles />
+          <Masterpiece />
+          <SectionDivider variant="light" />
+          <BehindStudio />
+          <Process />
+          <SectionDivider variant="light" />
+          <Gallery />
+          <Testimonials />
+          <SectionDivider variant="light" />
+          <Pricing />
+          <WhyChooseUs />
+          <SectionDivider variant="light" />
+          <FAQ />
+          <SectionDivider variant="light" />
+          <FinalCTA />
+          <Booking />
+        </main>
+        <Footer />
+      </div>
+    </ContentProvider>
   );
 }

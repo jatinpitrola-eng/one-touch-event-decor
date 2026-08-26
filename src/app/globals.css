@@ -45,91 +45,87 @@
 }
 
 /* ============================================
-   ONE TOUCH EVENT DÉCOR — "MIDNIGHT VELVET"
-   Deep Wine + Coral + Ivory + Dusty Rose + Sage
-   (No blue, no gold — fresh, romantic, dramatic)
+   ONE TOUCH EVENT DÉCOR — "EMERALD LUXE"
+   Deep Emerald + Blush Rose + Copper + Sage + Cream
+   (No blue, no gold — fresh, botanical, luxurious)
    ============================================ */
 :root {
   --radius: 0.75rem;
 
   /* Surfaces */
-  --background: #FAF3E8;            /* warm ivory */
-  --foreground: #1A1410;            /* rich espresso charcoal */
-  --card: #FFFCF5;                  /* ivory card */
-  --card-foreground: #1A1410;
-  --popover: #FFFCF5;
-  --popover-foreground: #1A1410;
+  --background: #F7F1E8;            /* warm cream */
+  --foreground: #1a1a1a;            /* charcoal */
+  --card: #FCFAF3;                  /* card white — slightly brighter than cream */
+  --card-foreground: #1a1a1a;
+  --popover: #FCFAF3;
+  --popover-foreground: #1a1a1a;
 
-  /* BRAND COLORS — Midnight Velvet */
-  --wine: #4A1A28;                  /* deep wine — primary dark */
-  --wine-deep: #2A0E18;             /* black cherry — deepest dark */
-  --wine-soft: #6B2A3B;             /* lighter wine */
-  --wine-glow: #7A1F37;             /* wine accent */
+  /* BRAND COLORS — Emerald Luxe */
+  --emerald: #0B3D2E;               /* deep emerald — primary */
+  --emerald-deep: #07261d;          /* near-black green */
+  --emerald-mid: #2E5D43;           /* mid emerald */
 
-  --coral: #E07856;                 /* warm coral — main accent */
-  --coral-soft: #F0A88E;            /* soft coral */
-  --coral-deep: #C45A3B;            /* deeper coral */
+  --blush: #E8B4B8;                 /* blush rose */
+  --blush-deep: #D4A5A5;            /* dusty rose */
 
-  --rose: #D4A5A5;                  /* dusty rose — soft accent */
-  --rose-soft: #F0D5D7;             /* very soft rose */
-  --rose-deep: #B07878;            /* deep rose */
+  --copper: #B87333;                /* copper — accent */
+  --copper-light: #C68A4E;          /* copper light */
 
-  --sage: #9CAF88;                  /* sage green — natural accent */
-  --sage-soft: #C5D1B5;             /* soft sage */
-  --sage-deep: #6E7F5C;            /* deep sage */
+  --sage: #3F6B52;                  /* sage green — botanical */
+  --sage-soft: #6B8E76;             /* soft sage */
 
-  --ivory: #FAF3E8;                 /* ivory background */
-  --cream: #FFFCF5;                 /* cream surface */
-  --champagne: #E8DDC8;             /* soft champagne (light, not gold) */
+  --cream: #F7F1E8;                 /* warm cream */
+  --card-white: #FCFAF3;             /* card white */
+  --charcoal: #1a1a1a;              /* charcoal text */
 
-  /* Tailwind aliases — bind to new palette */
-  --primary: #4A1A28;               /* wine */
-  --primary-foreground: #FAF3E8;   /* ivory */
-  --secondary: #F5EDE0;            /* soft cream */
-  --secondary-foreground: #4A1A28;
-  --muted: #F0E6D6;
+  /* Tailwind aliases */
+  --primary: #0B3D2E;
+  --primary-foreground: #F7F1E8;
+  --secondary: #F0E8D8;
+  --secondary-foreground: #0B3D2E;
+  --muted: #EFE6D4;
   --muted-foreground: #6B5D4A;
-  --accent: #E07856;               /* coral */
-  --accent-foreground: #FAF3E8;
+  --accent: #B87333;
+  --accent-foreground: #F7F1E8;
   --destructive: #B23A2C;
-  --border: #E8DDC8;
-  --input: #E8DDC8;
-  --ring: #E07856;
+  --border: #E5D9C0;
+  --input: #E5D9C0;
+  --ring: #B87333;
 
-  --chart-1: #4A1A28;
-  --chart-2: #E07856;
-  --chart-3: #D4A5A5;
-  --chart-4: #9CAF88;
-  --chart-5: #E8DDC8;
-  --sidebar: #4A1A28;
-  --sidebar-foreground: #FAF3E8;
-  --sidebar-primary: #E07856;
-  --sidebar-primary-foreground: #FAF3E8;
-  --sidebar-accent: #2A0E18;
-  --sidebar-accent-foreground: #FAF3E8;
-  --sidebar-border: #6B2A3B;
-  --sidebar-ring: #E07856;
+  --chart-1: #0B3D2E;
+  --chart-2: #E8B4B8;
+  --chart-3: #B87333;
+  --chart-4: #3F6B52;
+  --chart-5: #C68A4E;
+  --sidebar: #0B3D2E;
+  --sidebar-foreground: #F7F1E8;
+  --sidebar-primary: #B87333;
+  --sidebar-primary-foreground: #F7F1E8;
+  --sidebar-accent: #07261d;
+  --sidebar-accent-foreground: #F7F1E8;
+  --sidebar-border: #2E5D43;
+  --sidebar-ring: #B87333;
 }
 
 .dark {
-  --background: #2A0E18;
-  --foreground: #FAF3E8;
-  --card: #4A1A28;
-  --card-foreground: #FAF3E8;
-  --popover: #4A1A28;
-  --popover-foreground: #FAF3E8;
-  --primary: #E07856;
-  --primary-foreground: #FAF3E8;
-  --secondary: #6B2A3B;
-  --secondary-foreground: #FAF3E8;
-  --muted: #6B2A3B;
-  --muted-foreground: #D4A5A5;
-  --accent: #D4A5A5;
-  --accent-foreground: #2A0E18;
+  --background: #07261d;
+  --foreground: #F7F1E8;
+  --card: #0B3D2E;
+  --card-foreground: #F7F1E8;
+  --popover: #0B3D2E;
+  --popover-foreground: #F7F1E8;
+  --primary: #E8B4B8;
+  --primary-foreground: #07261d;
+  --secondary: #2E5D43;
+  --secondary-foreground: #F7F1E8;
+  --muted: #2E5D43;
+  --muted-foreground: #E8B4B8;
+  --accent: #B87333;
+  --accent-foreground: #F7F1E8;
   --destructive: #E07563;
-  --border: #6B2A3B;
-  --input: #6B2A3B;
-  --ring: #D4A5A5;
+  --border: #2E5D43;
+  --input: #2E5D43;
+  --ring: #E8B4B8;
 }
 
 @layer base {
@@ -145,33 +141,29 @@
     overflow-x: hidden;
   }
   ::selection {
-    background-color: var(--wine);
-    color: var(--ivory);
+    background-color: var(--emerald);
+    color: var(--cream);
   }
 }
 
-/* ============================================
-   CUSTOM SCROLLBAR — Wine + Coral
-   ============================================ */
+/* Custom scrollbar — Emerald + Copper */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5EDE0;
+  background: #F0E8D8;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #4A1A28, #6B2A3B);
+  background: linear-gradient(180deg, #0B3D2E, #2E5D43);
   border-radius: 6px;
-  border: 2px solid #F5EDE0;
+  border: 2px solid #F0E8D8;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #E07856, #D4A5A5);
+  background: linear-gradient(180deg, #B87333, #C68A4E);
 }
 
-/* ============================================
-   TYPOGRAPHY HELPERS
-   ============================================ */
+/* Typography */
 .font-display {
   font-family: var(--font-playfair), serif;
   font-feature-settings: "liga", "dlig";
@@ -180,22 +172,16 @@
   font-family: var(--font-cormorant), serif;
   font-style: italic;
 }
-.tracking-luxe {
-  letter-spacing: 0.4em;
-}
-.tracking-wide-luxe {
-  letter-spacing: 0.25em;
-}
+.tracking-luxe { letter-spacing: 0.4em; }
+.tracking-wide-luxe { letter-spacing: 0.25em; }
 
-/* Decorative divider with botanical accent */
 .luxe-divider {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--coral);
+  color: var(--copper);
 }
-.luxe-divider::before,
-.luxe-divider::after {
+.luxe-divider::before, .luxe-divider::after {
   content: "";
   display: block;
   width: 40px;
@@ -203,49 +189,26 @@
   background: currentColor;
 }
 
-/* ============================================
-   KEYFRAME ANIMATIONS
-   ============================================ */
-
-/* Balloon float */
+/* Keyframes */
 @keyframes balloonFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-  50% {
-    transform: translateY(-30px) rotate(2deg);
-  }
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-30px) rotate(2deg); }
 }
-.animate-balloon-float {
-  animation: balloonFloat 6s ease-in-out infinite;
-}
+.animate-balloon-float { animation: balloonFloat 6s ease-in-out infinite; }
 
-/* Slow rotate for ornamental rings */
 @keyframes slowSpin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.animate-slow-spin {
-  animation: slowSpin 40s linear infinite;
-}
-.animate-slow-spin-reverse {
-  animation: slowSpin 60s linear infinite reverse;
-}
+.animate-slow-spin { animation: slowSpin 40s linear infinite; }
+.animate-slow-spin-reverse { animation: slowSpin 60s linear infinite reverse; }
 
-/* Gradient sheen for text */
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
 .shimmer-text {
-  background: linear-gradient(
-    90deg,
-    var(--wine) 0%,
-    var(--coral) 25%,
-    var(--rose) 50%,
-    var(--coral) 75%,
-    var(--wine) 100%
-  );
+  background: linear-gradient(90deg, var(--emerald) 0%, var(--copper) 25%, var(--blush) 50%, var(--copper) 75%, var(--emerald) 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -253,38 +216,24 @@
   animation: shimmer 8s linear infinite;
 }
 
-/* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.animate-marquee {
-  animation: marquee 40s linear infinite;
-}
+.animate-marquee { animation: marquee 40s linear infinite; }
 
-/* Pulse glow for accents */
 @keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(224, 120, 86, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 40px 12px rgba(224, 120, 86, 0.2);
-  }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 115, 51, 0.4); }
+  50% { box-shadow: 0 0 40px 12px rgba(184, 115, 51, 0.2); }
 }
-.animate-pulse-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
-}
+.animate-pulse-glow { animation: pulseGlow 4s ease-in-out infinite; }
 
-/* Gentle bob for decorative elements */
 @keyframes bob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
-.animate-bob {
-  animation: bob 3s ease-in-out infinite;
-}
+.animate-bob { animation: bob 3s ease-in-out infinite; }
 
-/* String sway (for balloon strings) */
 @keyframes sway {
   0%, 100% { transform: rotate(-3deg); }
   50% { transform: rotate(3deg); }
@@ -294,36 +243,21 @@
   transform-origin: top center;
 }
 
-/* Drift — slow horizontal drift for ambient balloons */
 @keyframes drift {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
   33% { transform: translate(15px, -20px) rotate(2deg); }
   66% { transform: translate(-10px, 15px) rotate(-2deg); }
 }
-.animate-drift {
-  animation: drift 12s ease-in-out infinite;
-}
+.animate-drift { animation: drift 12s ease-in-out infinite; }
 
-/* Section reveal — clip-path wipe */
-@keyframes clipReveal {
-  0% { clip-path: inset(0 100% 0 0); opacity: 0; }
-  100% { clip-path: inset(0 0 0 0); opacity: 1; }
-}
-
-/* Gradient mesh shift */
 @keyframes meshShift {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(50px, -30px) scale(1.1); }
   66% { transform: translate(-30px, 40px) scale(0.95); }
 }
-.animate-mesh-shift {
-  animation: meshShift 20s ease-in-out infinite;
-}
+.animate-mesh-shift { animation: meshShift 20s ease-in-out infinite; }
 
-/* Texture: subtle grain */
-.grain-overlay {
-  position: relative;
-}
+.grain-overlay { position: relative; }
 .grain-overlay::after {
   content: "";
   position: absolute;
@@ -334,26 +268,24 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* ============================================
-   GRADIENT BACKGROUNDS — Midnight Velvet
-   ============================================ */
+/* Gradient backgrounds — Emerald Luxe */
 .bg-luxe-cream {
-  background: radial-gradient(ellipse at top, #FFFCF5 0%, #FAF3E8 50%, #F5EDE0 100%);
+  background: radial-gradient(ellipse at top, #FCFAF3 0%, #F7F1E8 50%, #F0E8D8 100%);
 }
-.bg-luxe-wine {
-  background: radial-gradient(ellipse at top, #6B2A3B 0%, #4A1A28 50%, #2A0E18 100%);
+.bg-luxe-emerald {
+  background: radial-gradient(ellipse at top, #2E5D43 0%, #0B3D2E 50%, #07261d 100%);
 }
-.bg-luxe-rose {
-  background: linear-gradient(135deg, #F0D5D7 0%, #D4A5A5 100%);
+.bg-luxe-blush {
+  background: linear-gradient(135deg, #F0D5D7 0%, #E8B4B8 100%);
 }
-.bg-luxe-coral {
-  background: linear-gradient(135deg, #F0A88E 0%, #E07856 100%);
+.bg-luxe-copper {
+  background: linear-gradient(135deg, #C68A4E 0%, #B87333 100%);
 }
 
-/* Gradient mesh — animated soft blobs */
+/* Gradient mesh */
 .gradient-mesh {
   position: relative;
-  background: #FAF3E8;
+  background: #F7F1E8;
   overflow: hidden;
 }
 .gradient-mesh::before {
@@ -362,14 +294,14 @@
   inset: -20%;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 30%, rgba(224, 120, 86, 0.18) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(212, 165, 165, 0.18) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(156, 175, 136, 0.10) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(184, 115, 51, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(232, 180, 184, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(63, 107, 82, 0.10) 0%, transparent 50%);
   animation: meshShift 20s ease-in-out infinite;
 }
 .gradient-mesh-dark {
   position: relative;
-  background: #2A0E18;
+  background: #07261d;
   overflow: hidden;
 }
 .gradient-mesh-dark::before {
@@ -378,24 +310,24 @@
   inset: -20%;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 30%, rgba(224, 120, 86, 0.25) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(212, 165, 165, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(156, 175, 136, 0.10) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(184, 115, 51, 0.22) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(232, 180, 184, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(63, 107, 82, 0.12) 0%, transparent 50%);
   animation: meshShift 25s ease-in-out infinite;
 }
 
-/* Glass card */
+/* Glass cards */
 .glass-card {
-  background: rgba(255, 252, 245, 0.7);
+  background: rgba(252, 250, 243, 0.7);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(232, 221, 200, 0.6);
+  border: 1px solid rgba(229, 217, 192, 0.6);
 }
 .glass-card-dark {
-  background: rgba(74, 26, 40, 0.55);
+  background: rgba(11, 61, 46, 0.55);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(224, 120, 86, 0.25);
+  border: 1px solid rgba(184, 115, 51, 0.25);
 }
 
 /* Hover lift */
@@ -404,19 +336,13 @@
 }
 .hover-lift:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 48px -16px rgba(74, 26, 40, 0.3);
+  box-shadow: 0 24px 48px -16px rgba(11, 61, 46, 0.3);
 }
 
-/* Image zoom on hover */
-.zoom-img {
-  overflow: hidden;
-}
-.zoom-img img {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.zoom-img:hover img {
-  transform: scale(1.08);
-}
+/* Image zoom */
+.zoom-img { overflow: hidden; }
+.zoom-img img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.zoom-img:hover img { transform: scale(1.08); }
 
 /* Section number watermark */
 .section-num {
@@ -425,17 +351,13 @@
   font-weight: 900;
   line-height: 0.8;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(74, 26, 40, 0.08);
-  text-stroke: 1px rgba(74, 26, 40, 0.08);
+  -webkit-text-stroke: 1px rgba(11, 61, 46, 0.08);
   user-select: none;
   pointer-events: none;
 }
 
-/* Underline draw on hover */
-.underline-draw {
-  position: relative;
-  display: inline-block;
-}
+/* Underline draw */
+.underline-draw { position: relative; display: inline-block; }
 .underline-draw::after {
   content: "";
   position: absolute;
@@ -453,21 +375,16 @@
   transform-origin: left;
 }
 
-/* ============================================
-   CUSTOM CURSOR — Luxe dot + magnetic ring
-   ============================================ */
+/* Custom cursor */
 @media (hover: hover) and (pointer: fine) {
-  body.luxe-cursor,
-  body.luxe-cursor * {
-    cursor: none !important;
-  }
+  body.luxe-cursor, body.luxe-cursor * { cursor: none !important; }
   .luxe-cursor-dot {
     position: fixed;
     top: 0;
     left: 0;
     width: 8px;
     height: 8px;
-    background: var(--coral);
+    background: var(--copper);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
@@ -480,37 +397,59 @@
     left: 0;
     width: 36px;
     height: 36px;
-    border: 1.5px solid rgba(74, 26, 40, 0.4);
+    border: 1.5px solid rgba(11, 61, 46, 0.4);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
     transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s;
   }
-  .luxe-cursor-hovering .luxe-cursor-dot {
-    width: 0;
-    height: 0;
-  }
+  .luxe-cursor-hovering .luxe-cursor-dot { width: 0; height: 0; }
   .luxe-cursor-hovering .luxe-cursor-ring {
     width: 60px;
     height: 60px;
-    border-color: var(--coral);
-    background: rgba(224, 120, 86, 0.1);
+    border-color: var(--copper);
+    background: rgba(184, 115, 51, 0.1);
   }
 }
 
-/* Scroll progress bar */
+/* Scroll progress bar — copper gradient */
 .scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
   height: 3px;
   z-index: 9999;
-  background: linear-gradient(90deg, var(--wine) 0%, var(--coral) 50%, var(--rose) 100%);
+  background: linear-gradient(90deg, var(--emerald) 0%, var(--copper) 50%, var(--blush) 100%);
   transition: width 0.1s ease-out;
 }
 
-/* Reduced motion */
+/* Admin panel styles */
+.admin-input {
+  width: 100%;
+  background: #FCFAF3;
+  border: 1px solid #E5D9C0;
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.admin-input:focus {
+  outline: none;
+  border-color: #B87333;
+  box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.15);
+}
+.admin-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0B3D2E;
+  margin-bottom: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

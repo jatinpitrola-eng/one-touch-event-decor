@@ -11,7 +11,7 @@ export default function SectionDivider({
 }: {
   variant?: "light" | "dark";
 }) {
-  const stroke = variant === "dark" ? "#E07856" : "#4A1A28";
+  const stroke = variant === "dark" ? "#B87333" : "#0B3D2E";
   return (
     <div className="relative w-full py-8 md:py-12 flex justify-center overflow-hidden">
       <motion.svg
@@ -89,7 +89,7 @@ export default function SectionDivider({
             opacity="0.7"
           />
           {/* Center dot */}
-          <circle cx="200" cy="30" r="2.5" fill="#E07856" />
+          <circle cx="200" cy="30" r="2.5" fill="#B87333" />
           {/* Small top flourish */}
           <path
             d="M 200 24 L 200 18"

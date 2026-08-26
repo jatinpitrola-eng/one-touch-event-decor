@@ -17,7 +17,7 @@ type Petal = {
   drift: number;
 };
 
-const COLORS = ["#D4A5A5", "#E07856", "#F0A88E", "#9CAF88", "#E8DDC8"];
+const COLORS = ["#D4A5A5", "#B87333", "#C68A4E", "#9CAF88", "#E5D9C0"];
 
 function generatePetals(count: number): Petal[] {
   return Array.from({ length: count }, () => ({

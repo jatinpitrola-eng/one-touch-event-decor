@@ -15,7 +15,7 @@ const LINKS = [
   { label: "Contact", href: "#booking" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onLogoClick }: { onLogoClick?: () => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -48,7 +48,11 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <button
+            onClick={onLogoClick}
+            className="flex items-center gap-3 group"
+            aria-label="One Touch Event Decor — Home"
+          >
             <div className="relative w-11 h-11 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden">
               <Image
                 src="/logo.png"
@@ -58,12 +62,12 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden sm:block leading-tight">
-              <p className="font-script text-lg text-[#4A1A28]">One Touch</p>
-              <p className="font-display text-[10px] tracking-luxe text-[#E07856]">
+              <p className="font-script text-lg text-[#0B3D2E]">One Touch</p>
+              <p className="font-display text-[10px] tracking-luxe text-[#B87333]">
                 EVENT DÉCOR
               </p>
             </div>
-          </a>
+          </button>
 
           {/* Desktop links */}
           <ul className="hidden lg:flex items-center gap-8">
@@ -71,7 +75,7 @@ export default function Navbar() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-sans text-sm tracking-wide text-[#4A1A28] underline-draw hover:text-[#E07856] transition-colors"
+                  className="font-sans text-sm tracking-wide text-[#0B3D2E] underline-draw hover:text-[#B87333] transition-colors"
                 >
                   {l.label}
                 </a>
@@ -83,14 +87,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+919999999999"
-              className="flex items-center gap-2 text-[#4A1A28] text-sm hover:text-[#E07856] transition-colors"
+              className="flex items-center gap-2 text-[#0B3D2E] text-sm hover:text-[#B87333] transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span>+91 99999 99999</span>
             </a>
             <a
               href="#booking"
-              className="px-5 py-2.5 bg-[#4A1A28] text-[#FAF3E8] text-sm tracking-wide rounded-full hover:bg-[#E07856] transition-colors duration-300"
+              className="px-5 py-2.5 bg-[#0B3D2E] text-[#F7F1E8] text-sm tracking-wide rounded-full hover:bg-[#B87333] transition-colors duration-300"
             >
               Book Now
             </a>
@@ -99,7 +103,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             aria-label="Open menu"
-            className="lg:hidden p-2 text-[#4A1A28]"
+            className="lg:hidden p-2 text-[#0B3D2E]"
             onClick={() => setOpen(true)}
           >
             <Menu className="w-6 h-6" />
@@ -117,7 +121,7 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] lg:hidden"
           >
             <div
-              className="absolute inset-0 bg-[#4A1A28]/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#0B3D2E]/80 backdrop-blur-sm"
               onClick={() => setOpen(false)}
             />
             <motion.aside
@@ -127,14 +131,14 @@ export default function Navbar() {
               transition={{ type: "spring", damping: 26, stiffness: 240 }}
               className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-luxe-cream shadow-2xl flex flex-col"
             >
-              <div className="flex items-center justify-between p-6 border-b border-[#E8DDC8]">
+              <div className="flex items-center justify-between p-6 border-b border-[#E5D9C0]">
                 <div className="flex items-center gap-3">
                   <div className="relative w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">
                     <Image src="/logo.png" alt="Logo" fill className="object-contain p-1" />
                   </div>
                   <div className="leading-tight">
-                    <p className="font-script text-base text-[#4A1A28]">One Touch</p>
-                    <p className="font-display text-[9px] tracking-luxe text-[#E07856]">
+                    <p className="font-script text-base text-[#0B3D2E]">One Touch</p>
+                    <p className="font-display text-[9px] tracking-luxe text-[#B87333]">
                       EVENT DÉCOR
                     </p>
                   </div>
@@ -142,7 +146,7 @@ export default function Navbar() {
                 <button
                   aria-label="Close menu"
                   onClick={() => setOpen(false)}
-                  className="p-2 text-[#4A1A28]"
+                  className="p-2 text-[#0B3D2E]"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -158,7 +162,7 @@ export default function Navbar() {
                     <a
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="block py-3 font-display text-2xl text-[#4A1A28] border-b border-[#E8DDC8]/60 hover:text-[#E07856] transition-colors"
+                      className="block py-3 font-display text-2xl text-[#0B3D2E] border-b border-[#E5D9C0]/60 hover:text-[#B87333] transition-colors"
                     >
                       {l.label}
                     </a>
@@ -169,13 +173,13 @@ export default function Navbar() {
                 <a
                   href="#booking"
                   onClick={() => setOpen(false)}
-                  className="block w-full text-center px-5 py-3 bg-[#4A1A28] text-[#FAF3E8] tracking-wide rounded-full hover:bg-[#E07856] transition-colors"
+                  className="block w-full text-center px-5 py-3 bg-[#0B3D2E] text-[#F7F1E8] tracking-wide rounded-full hover:bg-[#B87333] transition-colors"
                 >
                   Book a Consultation
                 </a>
                 <a
                   href="tel:+919999999999"
-                  className="mt-3 flex items-center justify-center gap-2 text-[#4A1A28] text-sm"
+                  className="mt-3 flex items-center justify-center gap-2 text-[#0B3D2E] text-sm"
                 >
                   <Phone className="w-4 h-4" /> +91 99999 99999
                 </a>

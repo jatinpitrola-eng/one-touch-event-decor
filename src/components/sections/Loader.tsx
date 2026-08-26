@@ -21,9 +21,9 @@ export default function Loader() {
   // Smaller, more elegant balloon cluster
   const balloons = [
     { left: "10%", delay: 0, color: "#D4A5A5", size: 55, string: 180 },
-    { left: "26%", delay: 0.25, color: "#E07856", size: 70, string: 220 },
+    { left: "26%", delay: 0.25, color: "#B87333", size: 70, string: 220 },
     { left: "50%", delay: 0.15, color: "#9CAF88", size: 60, string: 200 },
-    { left: "72%", delay: 0.35, color: "#F0A88E", size: 75, string: 240 },
+    { left: "72%", delay: 0.35, color: "#C68A4E", size: 75, string: 240 },
     { left: "90%", delay: 0.2, color: "#D4A5A5", size: 58, string: 190 },
   ];
 
@@ -32,7 +32,7 @@ export default function Loader() {
       {!done && (
         <motion.div
           key="loader"
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-luxe-wine overflow-hidden"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-luxe-emerald overflow-hidden"
           exit={{ opacity: 0, transition: { duration: 0.7, ease: "easeInOut" } }}
         >
           {/* Animated gradient mesh background */}
@@ -40,7 +40,7 @@ export default function Loader() {
 
           {/* Rotating ornamental rings */}
           <div
-            className="absolute w-[140vw] h-[140vw] rounded-full border border-[#E07856]/8 animate-slow-spin"
+            className="absolute w-[140vw] h-[140vw] rounded-full border border-[#B87333]/8 animate-slow-spin"
             style={{ top: "-70vw", left: "-20vw" }}
           />
           <div
@@ -122,7 +122,7 @@ export default function Loader() {
                 </defs>
                 <text
                   fontSize="7"
-                  fill="#E07856"
+                  fill="#B87333"
                   fontFamily="serif"
                   letterSpacing="3"
                 >
@@ -147,7 +147,7 @@ export default function Loader() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-4 rounded-full bg-[#FAF3E8] shadow-2xl flex items-center justify-center overflow-hidden"
+                className="absolute inset-4 rounded-full bg-[#F7F1E8] shadow-2xl flex items-center justify-center overflow-hidden"
               >
                 <Image
                   src="/logo.png"
@@ -168,7 +168,7 @@ export default function Loader() {
                   repeat: Infinity,
                   ease: "easeOut",
                 }}
-                className="absolute inset-4 rounded-full border-2 border-[#E07856]"
+                className="absolute inset-4 rounded-full border-2 border-[#B87333]"
               />
             </motion.div>
 
@@ -182,15 +182,15 @@ export default function Loader() {
               <p className="font-script text-xl md:text-2xl text-[#D4A5A5] tracking-wide">
                 One Touch
               </p>
-              <h1 className="font-display text-2xl md:text-3xl text-[#FAF3E8] tracking-luxe mt-0.5">
+              <h1 className="font-display text-2xl md:text-3xl text-[#F7F1E8] tracking-luxe mt-0.5">
                 EVENT DÉCOR
               </h1>
               <div className="flex items-center justify-center gap-2 mt-3">
-                <span className="block w-8 h-px bg-[#E07856]" />
-                <span className="text-[#E07856] text-[10px] tracking-luxe">
+                <span className="block w-8 h-px bg-[#B87333]" />
+                <span className="text-[#B87333] text-[10px] tracking-luxe">
                   MIDNIGHT VELVET
                 </span>
-                <span className="block w-8 h-px bg-[#E07856]" />
+                <span className="block w-8 h-px bg-[#B87333]" />
               </div>
             </motion.div>
 
@@ -199,10 +199,10 @@ export default function Loader() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3 }}
-              className="mt-6 w-32 md:w-40 h-px bg-[#FAF3E8]/15 overflow-hidden"
+              className="mt-6 w-32 md:w-40 h-px bg-[#F7F1E8]/15 overflow-hidden"
             >
               <motion.div
-                className="h-full bg-gradient-to-r from-[#D4A5A5] via-[#E07856] to-[#F0A88E]"
+                className="h-full bg-gradient-to-r from-[#D4A5A5] via-[#B87333] to-[#C68A4E]"
                 initial={{ x: "-100%" }}
                 animate={{ x: "100%" }}
                 transition={{ duration: 1.0, delay: 1.4, ease: "easeInOut" }}
